@@ -37,4 +37,4 @@ je régénère une nouvelle carte sur ce site pour la donner au livreur.
 
 On peut générer une carte grand format ou sous forme de livret A4.
 
-[2d697c51]: /blog/categories/openstreetmap/ "OpenStreetMap"
+[2d697c51]: /tags.html#OpenStreetMap-ref "OpenStreetMap"
