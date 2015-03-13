@@ -11,7 +11,7 @@ icon: /assets/images/jekyll-mini.png
 
 Bienvenue sur mon site personnel.
 
-Ici, on va parler de [**JavaScript**](/blog/categories/javascript/), d'[**OpenStreetMap**](/blog/categories/openstreetmap/), de [**NodeJs**](/blog/categories/nodejs/),...
+Ici, on va parler de [**JavaScript**](/tags.html#JavaScript-ref), d'[**OpenStreetMap**](tags.html#OpenStreetMap-ref), de [**NodeJs**](/tags.html#NodeJs-ref),...
 
 <!--more-->
 
