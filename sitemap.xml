@@ -9,7 +9,7 @@ title : Sitemap Feed
   {% for page in site.pages %}
   <url>
     <loc>{{ site.production_url }}{{ page.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
