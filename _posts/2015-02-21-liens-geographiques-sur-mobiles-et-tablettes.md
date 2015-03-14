@@ -49,9 +49,9 @@ Par exemple:
 
 Voici l'[Arc de triomphe à Paris](geo:48.87379,2.29505)
 
-```
+~~~
 Voici l'<a href="geo:48.87379,2.29505">Arc de triomphe à Paris</a>
-```
+~~~
 
 Vous pouvez vérifier les coordonnées sur [OpenStreetMap](http://www.openstreetmap.org/?map=19/48.87379/2.29505#map=19/48.87379/2.29505)
 
