@@ -15,7 +15,7 @@ comment: true
 
 Je viens vous présenter [CAD-Killer]({{ site.production_url }}/cad-killer).
 
-![CAD-Killer]({{ site.production_url }}/asset/images/cad-killer.png)
+![CAD-Killer]({{ site.production_url }}/assets/images/cad-killer.png)
 
 Comme certains le savent, je travaille pour une société qui fait de la livraison de colis.
 Nous avons beaucoup d'adresses introuvables, soit parce que la rue est nouvelle et n'est pas encore sur les plans,
