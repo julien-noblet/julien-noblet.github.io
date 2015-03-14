@@ -1,6 +1,7 @@
 ---
 layout: null
 title : Sitemap Feed
+date: "2015-03-13 00:00"
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -24,4 +25,4 @@ title : Sitemap Feed
   </url>
   {% endfor %}
 
-</urlset> 
+</urlset>
