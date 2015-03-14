@@ -27,6 +27,9 @@ author :
 #
 production_url : http://julien-noblet.github.io
 
+paginate: 5
+paginate_path: "/blog/page:num/"
+excerpt_separator: "<!--more-->"
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
