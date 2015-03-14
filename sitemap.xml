@@ -24,5 +24,13 @@ date: "2015-03-13 00:00"
     <priority>0.8</priority>
   </url>
   {% endfor %}
-
+  {% comment %}
+  Url Fixes
+  {% endcomment %}
+  <url>
+    <loc>{{ site.production_url }}/cad-killer</loc>
+    <lastmod>{{ site.date }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
