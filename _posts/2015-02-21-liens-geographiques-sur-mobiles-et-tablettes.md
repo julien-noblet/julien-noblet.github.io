@@ -40,6 +40,7 @@ geo:LAT,LON,ALT
 
 LAT et LON sont en degrés décimaux, l'altitude en mètres est facultative.
 On peut également ajouter des options:
+
 - **crs** permet de spécifier le système de coordonnées,
 par défaut, le système de coordonnées est le ***WGS-84*** (Mercator).
 - **u** permet de renseigner l'imprecision.
@@ -48,12 +49,11 @@ Par exemple:
 
 Voici l'[Arc de triomphe à Paris](geo:48.87379,2.29505)
 
-~~~html
-
+{% highlight html %}
   [...]
   Voici l'<a href="geo:48.87379,2.29505">Arc de triomphe à Paris</a>
   [...]
-~~~
+{% endhighlight %}
 
 Vous pouvez vérifier les coordonnées sur [OpenStreetMap](http://www.openstreetmap.org/?map=19/48.87379/2.29505#map=19/48.87379/2.29505)
 
