@@ -10,7 +10,7 @@ date: "2015-03-13 00:00"
   {% for page in site.pages %}
   <url>
     <loc>{{ site.production_url }}{{ page.url }}</loc>
-    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -19,7 +19,7 @@ date: "2015-03-13 00:00"
   {% for post in site.posts %}
   <url>
     <loc>{{ site.production_url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -29,7 +29,7 @@ date: "2015-03-13 00:00"
   {% endcomment %}
   <url>
     <loc>{{ site.production_url }}/cad-killer</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
