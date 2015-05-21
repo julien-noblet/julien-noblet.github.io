@@ -69,6 +69,6 @@ On prend l'ordinateur à réparer:
     - Le BIOS que vous avez préparé ne fonctionne pas ou n'est pas bien nommé.
   - L'ordinateur redémarre et vous sautez de joie au plafond :)
 
-**_ATTENTION!!! Le BIOS fournis ici contient un mot de passe, pour le retrouver, faites 2 ou 3 essais, vous verrez alors une clé numerique s'afficher, consultez alors ce site: [bios-pw.org](bios-pw.org) et entrez la clé pour connaitre votre mot de passe._**
+**_ATTENTION!!! Le BIOS fournis ici contient un mot de passe, pour le retrouver, faites 2 ou 3 essais, vous verrez alors une clé numerique s'afficher, consultez alors ce site: [bios-pw.org](http://bios-pw.org) et entrez la clé pour connaitre votre mot de passe._**
 
 Dans l'espoir que ce tutoriel vous aura aidé.
