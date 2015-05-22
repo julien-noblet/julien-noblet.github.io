@@ -1,5 +1,4 @@
 ---
-date: "2015-05-21 12:00"
 ---
 User-agent: *
 {% for node in site.pages %}{% if node.noindex %}{% assign isset = true %}Disallow: {{ node.url }}
