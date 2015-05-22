@@ -1,7 +1,7 @@
 ---
 # Remember to set production_url in your _config.yml file!
 title : Sitemap
-date: "2015-03-13 00:00"
+date: "2015-05-21"
 ---
 {% for page in site.pages %}
 {{site.production_url}}{{ page.url }}{% endfor %}
