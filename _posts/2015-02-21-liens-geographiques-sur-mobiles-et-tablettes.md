@@ -16,6 +16,9 @@ icon: /assets/images/CodeWeb.jpg
 description: Je vais vous présenter la RFC5870 qui permet de faire des liens géographiques compris par les smartphones et avoir la possibilité faire un lien vers la fonction GPS.
 published: true
 comments: true
+redirect_from:
+ - /cad-killer/html5/2015/02/21/liens-geographiques-sur-mobiles-et-tablettes/
+ 
 ---
 
 En avançant sur le développement de [CAD-Killer](/blog/2015/02/12/CAD-Killer/), j'ai voulu faire une

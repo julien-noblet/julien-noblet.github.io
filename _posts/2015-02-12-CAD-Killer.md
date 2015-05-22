@@ -11,6 +11,10 @@ categories:
   - OpenStreetMap
 icon: /assets/images/cad-killer-tiny.png
 comment: true
+redirect_from:
+ - /pr%C3%A9sentations/2015/02/12/CAD-Killer/
+ - /pr%C3%A9sentations/cadkiller/openstreetmap/2015/02/12/CAD-Killer/
+ 
 ---
 
 Je viens vous présenter [CAD-Killer]({{ site.production_url }}/cad-killer).

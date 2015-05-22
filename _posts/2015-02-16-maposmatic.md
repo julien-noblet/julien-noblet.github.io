@@ -13,6 +13,9 @@ categories:
 icon: /assets/images/maposmatic-logo.png
 published: true
 comments: true
+redirect_from:
+ - /cartes/openstreetmap/2015/02/16/maposmatic/
+ 
 
 ---
 
