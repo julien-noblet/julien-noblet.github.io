@@ -9,7 +9,7 @@ categories:
   - Présentations
   - CAD-Killer
   - OpenStreetMap
-icon: /assets/images/cad-killer.png
+icon: /assets/images/cad-killer-tiny.png
 comment: true
 ---
 
