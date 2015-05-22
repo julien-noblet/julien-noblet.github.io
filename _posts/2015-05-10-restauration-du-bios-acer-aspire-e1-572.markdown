@@ -12,13 +12,13 @@ categories:
   - Réparation
   - Tutoriel
   - BIOS
-icon: 'https://cr-48.wikispaces.com/file/view/insyde_h2o_bios.png/236343284/insyde_h2o_bios.png'
+icon: /assets/images/insyde_h2o_bios.png
 comment: true
 ---
 
 Ce week-end alors que j'installais **ArchLinux** sur mon PC portable, le drame se produit: le BIOS me lache.
 
-Cette panne est connue sous le nom de "Black Screen of the Death", cela se traduit par un ecran noir avec le rétro-éclairage mais rien ne se produit. Il ne faut pas le confondre avec la panne sur Windows qui apparait après le chargement de Windows et qui affiche un ecran noir avec le pointeur de la souris. <!--more--> ![Black Screen](http://www.logisticsct.com/blog/wp-content/uploads/2014/03/IMG_20140310_164816_372.jpg)
+Cette panne est connue sous le nom de "Black Screen of the Death", cela se traduit par un ecran noir avec le rétro-éclairage mais rien ne se produit. Il ne faut pas le confondre avec la panne sur Windows qui apparait après le chargement de Windows et qui affiche un ecran noir avec le pointeur de la souris. <!--more--> ![Black Screen](/assets/images/ACER-Aspire_E1-572-black.jpg)
 
 Après quelques recherches sur Internet, cela semble être un problème récurent chez ACER sur les modèles compatible EFI fonctionnant avec les BIOS _InsydeH2O_.
 

@@ -10,7 +10,7 @@ tags:
 categories:
   - Cartes
   - OpenStreetMap
-icon: "http://www.maposmatic.org/media/img/chavagne-small.png"
+icon: /assets/images/maposmatic-logo.png
 published: true
 comments: true
 
@@ -26,7 +26,7 @@ MapOSMatic permet de créer des cartes papier dans plusieurs formats depuis les 
 
 <!--more-->
 
-![MapOSMatic sample](http://www.maposmatic.org/media/img/chavagne-small.png)
+![MapOSMatic sample](/assets/images/maposmatic-logo.png)
 
 
 Cela nous permet de gagner un temps précieux car les cartes des communes ne sont pas toujours
