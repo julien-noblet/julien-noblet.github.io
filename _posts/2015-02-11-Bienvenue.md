@@ -7,6 +7,9 @@ tags:
   - NodeJs
   - OpenStreetMap
 icon: /assets/images/jekyll-mini.png
+redirect_from:
+ - /2015/02/11/Bienvenue/
+ - /2015/02/12/Bienvenue/
 ---
 
 Bienvenue sur mon site personnel.
