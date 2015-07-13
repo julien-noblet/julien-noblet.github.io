@@ -14,6 +14,7 @@ comment: true
 redirect_from:
  - /pr%C3%A9sentations/2015/02/12/CAD-Killer/
  - /pr%C3%A9sentations/cadkiller/openstreetmap/2015/02/12/CAD-Killer/
+ - /pr%C3%A9sentations/cad-killer/openstreetmap/2015/02/12/CAD-Killer/
  
 ---
 
