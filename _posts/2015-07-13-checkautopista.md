@@ -22,8 +22,8 @@ Aujourd'hui, je me suis intéressé aux tags : [destination](http://wiki.openstr
 Je suis donc tombé sur l'outil CheckAutopista fait par [k1wi](http://www.openstreetmap.org/user/k1wi).
 Le soucis c'est que le site qui herbergait l'outil n'existe plus.
 
-Heurement le code est disponible sur github: https://github.com/k1wiosm/checkautopista
+Heurement le code est disponible sur github: (https://github.com/k1wiosm/checkautopista)
 
-J'ai donc fait mirroir ici : julien-noblet.github.io/checkautopista
+J'ai donc fait mirroir ici : (http://julien-noblet.github.io/checkautopista)
 
- 
+En esperant que cela servira à certains :)
