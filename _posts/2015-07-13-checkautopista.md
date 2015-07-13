@@ -8,14 +8,15 @@ tags:
 categories:
   - openstreetmap
 comment: true
-
+description: Un super outil de contrôle des autoroutes qui a été oublié par le temps mais qui est toujours fonctionnel! Il n'avait plus d'hebergeur alors j'ai fait un mirroir :)
 icon: https://upload.wikimedia.org/wikipedia/commons/9/9a/Spain_traffic_signal_s1.svg
 ---
 # CheckAutopista
 
 Ou comment contrôler les autoroutes dans OpenStreetMap?
 
----
+<!--more-->
+
 
 Aujourd'hui, je me suis intéressé aux tags : [destination](http://wiki.openstreetmap.org/wiki/FR:Key:destination) et [exit_to](http://wiki.openstreetmap.org/wiki/Key:exit_to)
 
