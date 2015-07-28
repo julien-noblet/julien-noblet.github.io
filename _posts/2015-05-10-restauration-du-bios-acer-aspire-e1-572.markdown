@@ -40,7 +40,7 @@ Si votre version est différente, ce n'est pas grave, notez la bien quand même.
 Ensuite, il faut un deuxième PC, connecté à internet et une clé USB vierge < 8G car on va devoir la formater.
 
 ### On télécharge le BIOS
-Si vous avez la même version que moi (E1-572 soit V5WE2), téléchargez ce fichier : **[V5WE2X64.fd](https://mega.co.nz/#!F4IDSCpB!c5R0cQYoThvwyxXynpmmbxkhDu8ublTN-4PxLPyv8c8)**
+Si vous avez la même version que moi (E1-572 soit V5WE2), téléchargez ce fichier : **[V5WE2X64.fd](http://goo.gl/IN9g9M)**
 
 Sinon, tentez de faire une recherche avec le modèle suivi de **x64.fd**.
 
