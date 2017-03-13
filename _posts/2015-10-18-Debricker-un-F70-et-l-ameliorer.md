@@ -11,12 +11,14 @@ categories:
   - Android
 published: true
 comments: true
+icon: /assets/images/f70.jpg
 ---
 
 # Voici comment j'ai débrické mon F70 :)
 
 Pour l'histoire, madame à un LG F70 depuis un an environ. suite aux mises a jours des differents bloatwares, il etait devenu inutilisable :'(
-Je me suis donc mis en tête de le boooster un peu.
+Je me suis donc mis en tête de le booster un peu.
+<!--more-->
 
 ## Etape 1 le Rootage
 Très simple via [towelroot](https://towelroot.com/), il suffit de télécharger l'application et de l'installer (il faut tout de même activer les sources inconue dans le menu sécurité du téléphonne)
@@ -36,7 +38,7 @@ Comment faire...
 Solution: Téléchargez LG Mobile Support Tool :
 Cliquez sur ...
 De l'autre coté, enlevez la batterie.
-Notez le Code IMEI. 
+Notez le Code IMEI.
 remetre la batterie.
 Enfoncer le bouton "Volume Up" et branchez le cable.
 Le menu de mise a jour du frimware s'ouvre sur le téléphonne :)
@@ -46,4 +48,3 @@ Entrez le n° d'IMEI.
 Patientez.
 
 Votre Téléphonne va redémarer et revenir comme sortie d'usine.
-
