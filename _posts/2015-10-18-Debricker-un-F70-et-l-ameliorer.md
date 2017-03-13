@@ -1,5 +1,16 @@
 ---
-published: false
+layout: post
+title: Voici comment j'ai débrické mon F70 :)
+date: "2015-10-18 13:31"
+tags:
+  - F70
+  - Android
+  - LG
+  - unbrick
+categories:
+  - Android
+published: true
+comments: true
 ---
 
 # Voici comment j'ai débrické mon F70 :)
