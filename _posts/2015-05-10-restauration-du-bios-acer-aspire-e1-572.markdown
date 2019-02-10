@@ -28,7 +28,7 @@ Oui mais voilà, trouver le bios dans le bon format n'est pas si simple, ACER ne
 
 Impossible d'en extraire le BIOS au format image ROM _(.fd pour les intimes)_.
 
-Après de nombreuses recherches, voici le **BIOS pour l'E1-572** connu aussi sous le doux nom de **V5WE2**: [V5WE2X64.fd](https://goo.gl/tMmr7Y)
+Après de nombreuses recherches, voici le **BIOS pour l'E1-572** connu aussi sous le doux nom de **V5WE2**: [V5WE2X64.fd](https://mega.nz/#!F4IDSCpB!c5R0cQYoThvwyxXynpmmbxkhDu8ublTN-4PxLPyv8c8)
 
 ## Comment fait on pour restaurer cela?
 <h2>Préparation</h2> Tout dabord, il faut vérifier que l'on ai bien le bon modèle.
@@ -40,7 +40,7 @@ Si votre version est différente, ce n'est pas grave, notez la bien quand même.
 Ensuite, il faut un deuxième PC, connecté à internet et une clé USB vierge < 8G car on va devoir la formater.
 
 ### On télécharge le BIOS
-Si vous avez la même version que moi (E1-572 soit V5WE2), téléchargez ce fichier : **[V5WE2X64.fd](https://goo.gl/tMmr7Y)**
+Si vous avez la même version que moi (E1-572 soit V5WE2), téléchargez ce fichier : **[V5WE2X64.fd](https://mega.nz/#!F4IDSCpB!c5R0cQYoThvwyxXynpmmbxkhDu8ublTN-4PxLPyv8c8)**
 
 Sinon, tentez de faire une recherche avec le modèle suivi de **x64.fd**.
 

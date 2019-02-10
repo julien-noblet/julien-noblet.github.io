@@ -16,30 +16,30 @@ icon: /assets/images/f70.jpg
 
 # Voici comment j'ai débrické mon F70 :)
 
-Pour l'histoire, madame à un LG F70 depuis un an environ. suite aux mises à jours des differents ~~bloatwares~~ applications fournies, il était devenu inutilisable :'(
+Pour l'histoire, madame à un LG F70 depuis un an environ. Suite aux mises à jours des différents ~~bloatwares~~ applications fournies, il était devenu inutilisable :'(
 
 Je me suis donc mis en tête de le booster un peu.
 <!--more-->
 
-## Etape 1 le Rootage
-Très simple via [towelroot](https://towelroot.com/), il suffit de télécharger l'application et de l'installer (il faut tout de même activer les sources inconnue dans le menu sécurité du téléphonne)
+## Étape 1 le Rootage
+Très simple via [towelroot](https://towelroot.com/), il suffit de télécharger l'application et de l'installer (il faut tout de même activer les sources inconnue dans le menu sécurité du téléphone)
 
-## Etape 2 On intègre les mises à jour dans la rom.
-A l'aide de T. Backup Pro., j'ai intégré les mises à jour dans la partion de la ROM .
+## Étape 2 On intègre les mises à jour dans la rom.
+A l'aide de T. Backup Pro., j'ai intégré les mises à jour dans la partition de la ROM .
 
 A l'exception de certaines applications Google (Hangout, Google plus, Play store et services Google)
 qui, je ne sait pourquoi ne supportent pas cela.
 
-J'en ai donc profité pour enlever Hangout de la rom. (cela me laisse plus de place pour la suite) et j'en ai profité pour intéger 2/3 applications :)
+J'en ai donc profité pour enlever Hangout de la rom. (cela me laisse plus de place pour la suite) et j'en ai profité pour intégrer 2/3 applications :)
 
-## Etape 3 patatra
-Suite à une erreur de manipulation, j'ai briqué le téléphonne.
+## Étape 3 patatra
+Suite à une erreur de manipulation, j'ai briqué le téléphone.
 
-Il redémarre en me nargaunt avec le logo LG mais rien de plus.
+Il redémarre en me narguant avec le logo LG mais rien de plus.
 
 Comment faire...
 
-Solution: [Téléchargez LG Mobile Support Tool :](https://ipfs.io/ipfs/QmYwVEshbur2Pg6qGKGhRz2rotipZqvP6wPnLfdkr1TMDZ/LG)
+Solution: [Téléchargez LG Mobile Support Tool :]({{ site.production_url }}/assets/LGMobileSupportTool.exe)
 
 Cliquez sur ...
 
@@ -47,16 +47,16 @@ De l'autre coté, enlevez la batterie.
 
 Notez le Code IMEI.
 
-Remetre la batterie.
+Remettre la batterie.
 
-Enfoncer le bouton "Volume Up" et branchez le cable.
+Enfoncer le bouton "Volume Up" et branchez le câble.
 
-Le menu de mise a jour du firmware s'ouvre sur le téléphonne :)
+Le menu de mise à jour du firmware s'ouvre sur le téléphone :)
 
 Coté PC, allez sur "Outils" puis "mettre à jour après une erreur".
 Entrez le n° d'IMEI.
 Patientez.
 
-Votre téléphonne va redémarer et revenir comme sortie d'usine.
+Votre téléphone va redémarrer et revenir comme sortie d'usine.
 
 Et voila ;)

@@ -44,7 +44,7 @@ On peut également ajouter des options:
 
 - **crs** permet de spécifier le système de coordonnées,
 par défaut, le système de coordonnées est le ***WGS-84*** (Mercator).
-- **u** permet de renseigner l'imprecision.
+- **u** permet de renseigner l'imprécision.
 
 Par exemple:
 
