@@ -16,7 +16,7 @@ icon: /assets/images/f70.jpg
 
 # Voici comment j'ai débrické mon F70 :)
 
-Pour l'histoire, madame à un LG F70 depuis un an environ. Suite aux mises à jours des différents ~~bloatwares~~ applications fournies, il était devenu inutilisable :'(
+Pour l'histoire, madame a un LG F70 depuis un an environ. Suite aux mises à jours des différents ~~bloatwares~~ applications fournies, il était devenu inutilisable :'(
 
 Je me suis donc mis en tête de le booster un peu.
 <!--more-->
