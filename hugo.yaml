@@ -1,0 +1,25 @@
+baseURL: http://julien-noblet.github.io/
+disablePathToLower: true
+languageCode: fr_fr
+title: Mon blog
+theme: ["PaperMod"]
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+Params:
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
