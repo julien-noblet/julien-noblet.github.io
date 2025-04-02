@@ -1,0 +1,57 @@
+name: traefik
+
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # - ./traefik:/dynamic:ro # I don't need a dynamic file, use label!
+    environment:
+      TZ: Europe/Paris
+
+    ports:
+      # Port 80 is only used for redirecting to https; Some TLDs don't even support connecting to it (i.e. .dev).
+      # Let's Encrypt will use a challenge on port 443 to verify the domain (TLS-ALPN-01);
+      # See https://doc.traefik.io/traefik/https/acme/#tlschallenge for more information.
+      - 80:80     # web
+      - 443:443   # websecure
+      - 8080:8080 # traefik internal
+    networks:
+      - blocky
+      - public
+      - traefik
+    command:
+      - --log.level=DEBUG
+      - --log.format=json
+      - --api.insecure=true
+      - --entryPoints.web.address=:80
+      - --providers.docker=true
+      - --providers.docker.network=traefik
+      # Do not expose containers unless explicitly told so
+      - --providers.docker.exposedbydefault=false
+      #- --providers.docker.allowEmptyServices=true
+      - --entryPoints.websecure.address=:443
+      - --ping=true
+      - --metrics.addinternals
+      - --metrics.prometheus.buckets=0.1,0.3,1.2,5.0
+      - --accesslog=true
+      - --accesslog.format=json
+      - --providers.file.directory=/dynamic
+      - --providers.file.watch=true
+
+    restart: always
+    healthcheck:
+      # Run traefik healthcheck command
+      # https://doc.traefik.io/traefik/operations/cli/#healthcheck
+      test: [ "CMD", "traefik", "healthcheck", "--ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    dns: 1.1.1.1
+
+networks:
+  traefik:
+    name: traefik
+    internal: true

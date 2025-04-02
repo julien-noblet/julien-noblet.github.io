@@ -1,0 +1,148 @@
+upstreams:
+  groups:
+    default:
+      - 9.9.9.9
+      - 149.112.112.112
+      - https://dns.quad9.net/dns-query
+      - tcp-tls:one.one.one.one:853
+      - 1.1.1.1
+      - 8.8.8.8
+      - tcp-tls:fdns1.dismail.de:853
+      - https://dns.digitale-gesellschaft.ch/dns-query
+  strategy: parallel_best
+  timeout: 5s
+  init:
+    strategy: fast
+# bootstrapDns:
+#   - upstream: https://9.9.9.9/dns-query
+#   - upstream: tcp-tls:one.one.one.one:853
+#     ips: 
+#       - 1.1.1.1
+
+# optional: Determines how blocky will create outgoing connections. This impacts both upstreams, and lists.
+# accepted: dual, v4, v6
+# default: dual
+connectIPVersion: dual
+
+caching:
+  minTime: 1m
+  maxTime: 0m
+  maxItemsCount: 0
+  prefetching: true
+  prefetchExpires: 2h
+  prefetchThreshold: 5
+  prefetchMaxItemsCount: 0
+  cacheTimeNegative: 30s
+
+blocking:
+  denylists:
+    ads:
+      #- https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+    groupe_one:
+      - http://traefik/lists-download/downloaded/group_one.txt
+    hagezi:
+      - http://traefik/lists-download/downloaded/hagezi.txt
+    my-lists:
+      - http://traefik/lists-download/watch/blocked-list.txt
+  allowlists:
+    my-lists:
+      - http://traefik/lists-download/watch/allowed-list.txt
+  clientGroupsBlock:
+    default:
+      - ads
+      - group_one
+      - hagezi
+      - my-lists
+  blockType: zeroIp
+  blockTTL: 1h
+  loading:
+    # Disable build-in refreshing, only listens to lists updater refreshing requests.
+    refreshPeriod: 4h
+    downloads:
+      timeout: 5m
+      attempts: 5
+      cooldown: 5s
+    concurrency: 4
+    strategy: failOnError
+    # Forgive the errors in the aggregate lists. The aggregate one also contains all errors from all of lists.
+    maxErrorsPerSource: -1
+
+customDNS:
+  customTTL: 5m
+  # optional: if true (default), return empty result for unmapped query types (for example TXT, MX or AAAA if only IPv4 address is defined).
+  # if false, queries with unmapped types will be forwarded to the upstream resolver
+  filterUnmappedTypes: true
+  # optional: replace domain in the query with other domain before resolver lookup in the mapping
+  rewrite:
+    mafreebox: mafreebox.local
+    dns: dns.local
+  zone: |
+    $ORIGIN local.
+    dns     3600  A     192.168.1.X
+    dns     3600  AAAA  2a01::::::
+    @       3600  CNAME dns
+    mafreebox     A     192.168.1.254
+    grafana       CNAME	dns
+    blocky        CNAME	dns
+
+clientLookup:
+  # optional: this DNS resolver will be used to perform reverse DNS lookup (typically local router)
+  upstream: 192.168.1.254
+  # optional: some routers return multiple names for client (host name and user defined name). Define which single name should be used.
+  # Example: take second name if present, if not take first name
+  singleNameOrder:
+    - 2
+    - 1
+  # optional: custom mapping of client name to IP addresses. Useful if reverse DNS does not work properly or just to have custom client names.
+  clients:
+    internal:
+
+ports:
+  dns: 53
+  http: 4000
+  # optional: Port(s) and bind ip address(es) for DoT (DNS-over-TLS) listener. Example: 853, 127.0.0.1:853
+  #tls: 853
+  # optional: Port(s) and optional bind ip address(es) to serve HTTPS used for prometheus metrics, pprof, REST API, DoH... If you wish to specify a specific IP, you can do so such as 192.168.0.1:443. Example: 443, :443, 127.0.0.1:443,[::1]:443
+  #https: 443
+
+prometheus:
+  # enabled if true
+  enable: true
+  # url path, optional (default '/metrics')
+  path: /metrics
+
+# optional: write query information (question, answer, client, duration etc.) to daily csv file
+queryLog:
+  # optional one of: mysql, postgresql, timescale, csv, csv-client. If empty, log to console
+  type: postgresql
+  # directory (should be mounted as volume in docker) for csv, db connection string for mysql/postgresql
+  target: postgres://blocky:password@postgres.blocky_network:5432/blocky
+  #postgresql target: postgres://user:password@db_host_or_ip:5432/db_name
+  # if > 0, deletes log files which are older than ... days
+  logRetentionDays: 60
+  # optional: Max attempts to create specific query log writer, default: 3
+  creationAttempts: 60
+  # optional: Time between the creation attempts, default: 2s
+  creationCooldown: 5s
+  # optional: Which fields should be logged. You can choose one or more from: clientIP, clientName, responseReason, responseAnswer, question, duration. If not defined, it logs all fields
+  # fields:
+  #   - clientIP
+  #   - duration
+  # optional: Interval to write data in bulk to the external database, default: 30s
+  flushInterval: 30s
+
+# optional: logging configuration
+log:
+  # optional: Log level (one from trace, debug, info, warn, error). Default: info
+  level: info
+  # optional: Log format (text or json). Default: text
+  format: text
+  # optional: log timestamps. Default: true
+  timestamp: true
+  # optional: obfuscate log output (replace all alphanumeric characters with *) for user sensitive data like request domains or responses to increase privacy. Default: false
+  privacy: false
+
+# optional: add EDE error codes to dns response
+ede:
+  # enabled if true, Default: false
+  enable: false

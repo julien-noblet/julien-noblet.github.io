@@ -1,0 +1,92 @@
+name: blocky
+
+services:
+  blocky:
+    image: spx01/blocky:latest
+    container_name: blocky
+    depends_on:
+      postgres:
+        condition: service_healthy
+        restart: true
+      traefik:
+        condition: service_healthy
+    volumes:
+      # load the configuration file config.yml from the volume blocky_config
+      - blocky_config:/app/config.yml:ro
+      # - ../queryLogs:/logs # we use postgresql
+      - ../denylists:/app/denylists/
+      - ../allowlists:/app/allowlists/
+    environment:
+      TZ: Europe/Paris
+    ports:
+      - '53:53/tcp'
+      - '53:53/udp'
+      - '4000:4000/tcp'
+    networks:
+      - blocky
+      - public # Need to reach public DNSs.
+      - traefik # Need to reach lists.
+    restart: unless-stopped
+    labels:
+      prometheus.job: blocky
+    cap_add:
+      - NET_BIND_SERVICE
+    cap_drop:
+      - all
+    dns: 1.1.1.1
+    hostname: blocky
+    security_opt:
+      - no-new-privileges:true
+
+  postgres:
+    image: 'pgautoupgrade/pgautoupgrade:17-alpine'
+    container_name: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data/
+    environment:
+      TZ: Europe/Paris
+      POSTGRES_USER: blocky # The PostgreSQL user (useful to connect to the database)
+      POSTGRES_PASSWORD: password # The PostgreSQL password (useful to connect to the database)
+      POSTGRES_DB: blocky # The PostgreSQL default database (automatically created at first launch)
+    # ports:
+    #   - '5432:5432'
+    networks:
+      - blocky
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "blocky" ]
+      interval: 10s
+      start_period: 30s
+    # By default, a Postgres database is running on the 5432 port.
+    # If we want to access the database from our computer (outside the container),
+    # we must share the port with our computer's port.
+    # The syntax is [port we want on our machine]:[port we want to retrieve in the container]
+    # Note: You are free to change your computer's port,
+    # but take into consideration that it will change the way
+    # you are connecting to your database.
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.025'
+          memory: 64M
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  blocky:
+    # Give DNS!!!
+    internal: true
+    name: blocky_network
+
+volumes:
+  blocky_config:
+    # ./blocky
+    driver: local
+    driver_opts:
+      type: none
+      device: ./blocky
+      o: bind
+  postgres:
