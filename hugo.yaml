@@ -14,21 +14,38 @@ Params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
-menu:
-  main:
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 20
+
 languages:
   fr:
     weight: 1
+    taxonomies:
+      categories: categories
+      tags: tags
+    menu:
+      main:
+        - identifier: categories
+          name: Catégories
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 20
   en:
     weight: 2
+    taxonomies:
+      categories: categories
+      tags: tags
+    menu:
+      main:
+        - identifier: categories
+          name: Categories
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 20
 caches:
   images:
     dir: :cacheDir/images
