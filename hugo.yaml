@@ -24,3 +24,8 @@ menu:
       name: Tags
       url: /tags/
       weight: 20
+languages:
+  fr:
+    weight: 1
+  en:
+    weight: 2
