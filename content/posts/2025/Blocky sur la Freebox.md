@@ -434,8 +434,8 @@ customDNS:
     dns     3600  A     192.168.1.X
     @       3600  CNAME dns
     mafreebox     A     192.168.1.254
-    grafana	      CNAME	dns
-    blocky	      CNAME	dns
+    grafana       CNAME	dns
+    blocky        CNAME	dns
 
 clientLookup:
   # optional: this DNS resolver will be used to perform reverse DNS lookup (typically local router)
@@ -500,15 +500,15 @@ ede:
   enable: false
 ```
 
-Modifiez la zone à votre convenance:
+Modifiez la zone à votre convenance :
 ```yaml
   zone: |
     $ORIGIN local.
     dns     3600  A     192.168.1.X
     @       3600  CNAME dns
     mafreebox     A     192.168.1.254
-    grafana	      CNAME	dns
-    blocky	      CNAME	dns
+    grafana       CNAME	dns
+    blocky        CNAME	dns
 ```
 
 ## 5. On lance ##
@@ -518,4 +518,4 @@ Placez-vous dans le dossier ~/blocky puis lancez le *docker-compose*.
 cd ~/blocky
 docker compose up -d
 ```
-
+Docker va télécharger 
