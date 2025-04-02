@@ -1,0 +1,13 @@
+# Comments are supported
+#https://github.com/StevenBlack/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social-only/hosts
+#https://github.com/Perflyst/PiHoleBlocklist
+https://perflyst.github.io/PiHoleBlocklist/AmazonFireTV.txt
+https://perflyst.github.io/PiHoleBlocklist/SmartTV.txt
+https://perflyst.github.io/PiHoleBlocklist/android-tracking.txt
+#https://perflyst.github.io/PiHoleBlocklist/regex.list
+#https://small.oisd.nl/rpz
+https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Hosts-File.txt
+https://v.firebog.net/hosts/AdguardDNS.txt
