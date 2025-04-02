@@ -17,7 +17,7 @@ title: Blocky sur la Freebox
 Depuis quelque temps, je remarque que de plus en plus de publicités sont très intrusives et s'invitent sur tous mes appareils !
 
 J'ai donc décidé de mettre en place un DNS menteur qui va filtrer les sites que je ne veux pas.  
-Ça ne supprimera pas tout, mais c'est un bon début !
+Ça ne supprimera pas tout, mais c'est un bon début ! J'ai choisi [Blocky](https://0xerr0r.github.io/blocky/latest/) pour cela.
 
 J'ai une Freebox Delta à la maison. Elle permet de lancer des VM sans avoir besoin d'un Raspberry Pi ou d'une autre machine allumée en permanence.
 
