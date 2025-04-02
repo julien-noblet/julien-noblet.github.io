@@ -1,0 +1,3 @@
+# Manualy allowed
+
+www.google.fr

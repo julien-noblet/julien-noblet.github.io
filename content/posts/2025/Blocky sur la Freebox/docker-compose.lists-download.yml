@@ -1,0 +1,72 @@
+name: list_download
+
+services:
+  lists-download:
+    image: shizunge/blocky-lists-updater:latest
+    container_name: lists-download
+    depends_on:
+      traefik:
+        condition: service_healthy
+    volumes:
+      - ../lists_updaters/sources:/sources/sources:ro
+      - ../lists_updaters/watch:/web/watch:ro
+      - bld-downloaded:/web/downloaded
+      - ../blocky/index.html:/web/index.html:ro
+    environment:
+      # Possible values are DEBUG INFO WARN ERROR and NONE. Case sensitive.
+      BLU_LOG_LEVEL: INFO
+      # Add a location to the log messages.
+      BLU_NODE_NAME: "{{.Node.Hostname}}"
+      # Use an empty BLU_BLOCKY_URL to disable sending POST requests to the lists refresh API of blocky.
+      BLU_BLOCKY_URL: http://blocky.local:4000
+      # This should be under the BLU_WEB_FOLDER to be read by blocky.
+      BLU_DESTINATION_FOLDER: /web/downloaded
+      # Define the seconds to wait before the first download.
+      BLU_INITIAL_DELAY_SECONDS: 60
+      # Set BLU_INTERVAL_SECONDS to 0 to run the lists updater only once then exit.
+      BLU_INTERVAL_SECONDS: 86400
+      # Blocky won't read the sources files. It reads the downloaded files in the destination folder.
+      BLU_SOURCES_FOLDER: /sources
+      # Use an empty BLU_WATCH_FOLDER to disable watching lists of domains.
+      # This should be under the BLU_WEB_FOLDER to be read by blocky.
+      BLU_WATCH_FOLDER: /web/watch
+      # Use an empty BLU_WEB_FOLDER to disable the static-web-server.
+      BLU_WEB_FOLDER: /web
+      # Port used by the static-web-server.
+      BLU_WEB_PORT: 8080
+    networks:
+      - blocky
+      # Need to reach internet to download lists.
+      - public
+      - traefik
+    restart: unless-stopped
+
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/index.html" ]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 10s
+    labels:
+      traefik.enable: true
+      traefik.docker.network: traefik
+      traefik.http.routers.rtr-lists-download.rule: PathPrefix(`/lists-download`)
+      traefik.http.routers.rtr-lists-download.middlewares: stripprefix-lists-download@docker
+      traefik.http.routers.rtr-lists-download.entrypoints: web
+      traefik.http.middlewares.stripprefix-lists-download.stripprefix.prefixes: /lists-download
+      traefik.http.routers.rtr-lists-download.service: svc-lists-download
+      traefik.http.services.svc-lists-download.loadbalancer.server.port: 8080
+      traefik.job: list_download
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    # use 1.1.1.1 dns 
+    dns: 1.1.1.1
+volumes:
+  bld-downloaded:

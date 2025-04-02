@@ -1,0 +1,12 @@
+name: blocky
+
+include:
+  - docker-compose/docker-compose.traefik.yml        # Reverse proxy
+  - docker-compose/docker-compose.blocky.yml         # The Blocky-DNS service
+  - docker-compose/docker-compose.lists-download.yml # Give blocking lists to blocky
+
+networks:
+  public: # use the public network to access the internet
+    name: public_network
+    driver: bridge
+  
