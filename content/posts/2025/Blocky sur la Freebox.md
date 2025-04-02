@@ -10,11 +10,10 @@ tags:
 - docker
 - docker-compose
 
-date: "2025-04-02T01:00:00+02:00"
-draft: true
+date: "2025-04-02T19:00:00+02:00"
 title: Blocky sur la Freebox
 ---
-Depuis quelque temps, je remarque que de plus en plus de pubs sont très intrusives et s'invitent sur tous mes appareils !
+Depuis quelque temps, je remarque que de plus en plus de publicités sont très intrusives et s'invitent sur tous mes appareils !
 
 J'ai donc décidé de mettre en place un DNS menteur qui va filtrer les sites que je ne veux pas.  
 Ça ne supprimera pas tout, mais c'est un bon début !
@@ -50,7 +49,7 @@ Une fois terminé, on va passer à 2 CPU pour notre VM
 
 On relance la VM.
 
-Une fois démarrée, vous devriez avoir l'IP qui apparaît.
+Une fois démarrée, vous devriez avoir l'IPv4 et l'IPv6 qui apparaissent, notez les!
 
 Connectez-vous via SSH.
 
@@ -90,7 +89,7 @@ Créez un dossier "*blocky*" et un sous-dossier "*docker-compose*" :
 mkdir -p ~/blocky/docker-compose
 ```
 
-Nous allons découper notre fichier *docker-compose* en plusieurs services.
+Nous allons découper notre composition docker en plusieurs services.
 
 ### ~/blocky/docker-compose.yml ###
 ```yaml
@@ -432,6 +431,7 @@ customDNS:
   zone: |
     $ORIGIN local.
     dns     3600  A     192.168.1.X
+    dns     3600  AAAA  2a01::::::
     @       3600  CNAME dns
     mafreebox     A     192.168.1.254
     grafana       CNAME	dns
@@ -500,22 +500,82 @@ ede:
   enable: false
 ```
 
-Modifiez la zone à votre convenance :
+Modifiez la zone à votre convenance, pensez bien à noter vos IP:
 ```yaml
   zone: |
     $ORIGIN local.
     dns     3600  A     192.168.1.X
+    dns     3600  AAAA  2a01:monIPv6:::::
     @       3600  CNAME dns
     mafreebox     A     192.168.1.254
     grafana       CNAME	dns
     blocky        CNAME	dns
 ```
 
+On va maintenant ajouter les listes:
+### ~/blocky/lists_updaters/watch/allowed-list.txt ###
+```
+# Manualy allowed
+
+www.google.fr
+```
+
+### ~/blocky/lists_updaters/watch/blocked-list.txt ###
+```
+# Manualy blocked
+
+*.0-0.fr
+```
+
+### ~/blocky/lists_updaters/sources/group_one.txt ###
+```
+# Comments are supported
+#https://github.com/StevenBlack/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social-only/hosts
+#https://github.com/Perflyst/PiHoleBlocklist
+https://perflyst.github.io/PiHoleBlocklist/AmazonFireTV.txt
+https://perflyst.github.io/PiHoleBlocklist/SmartTV.txt
+https://perflyst.github.io/PiHoleBlocklist/android-tracking.txt
+#https://perflyst.github.io/PiHoleBlocklist/regex.list
+#https://small.oisd.nl/rpz
+https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Hosts-File.txt
+https://v.firebog.net/hosts/AdguardDNS.txt
+```
+
+### ~/blocky/lists_updaters/sources/hagezi.txt ###
+```
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus.txt
+
+```
+
+
 ## 5. On lance ##
 
-Placez-vous dans le dossier ~/blocky puis lancez le *docker-compose*.
+Placez-vous dans le dossier *~/blocky* puis lancez la composition docker.
 ```bash
 cd ~/blocky
 docker compose up -d
 ```
-Docker va télécharger 
+Docker va télécharger les images et lancer les services.
+
+Pour tester :
+```bash
+sudo apt install -y bind9-dnsutils
+nslookup google.fr 192.168.1.X # <-- remplacez par l'ip de la VM
+
+```
+
+## 6. Configuration du DHCP de la Freebox ##
+
+Allez dans les paramètres de la Freebox, DHCP :  
+![Saisie du serveur DNS](/assets/images/2025/Blocky_sur_la_Freebox/DHCP.png)  
+Remplissez le champ "**Serveur DNS 1**".
+
+Allez dans l'onglet "**Baux statiques**", et cliquez sur "**Ajouter un bail statique**". Sélectionnez votre VM dans le champ "**MAC**", saisissez votre IPv4 et sauvegardez.
+
+*Lors d'une prochaine connexion, Blocky sera utilisé comme serveur DNS.*
+
+**Si vous avez besoin de revenir en arrière, il faut remettre l'IP de la Freebox (192.168.1.254) dans le champ *Serveur DNS 1*.**
+
