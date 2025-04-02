@@ -1,6 +1,7 @@
 baseURL: http://julien-noblet.github.io/
 disablePathToLower: true
 languageCode: fr_fr
+defaultContentLanguage : fr
 title: Mon blog
 theme: ["PaperMod"]
 outputs:
