@@ -1,0 +1,17 @@
+{{- $filename := .Get "src" -}}
+{{- $lang := .Get "lang" | default "" -}}
+{{- $opts := .Get "opts" | default "" -}}
+{{- if not $filename -}}
+{{- errorf "Missing src parameter" -}}
+{{- end -}}
+
+{{- if eq $lang "shell" -}}
+{{- $lang = "bash" -}}
+{{- end -}}
+{{- $displayName := .Get "displayName" | default $filename -}}
+{{- $filecontent := readFile (path.Join .Page ".." $filename) -}}
+{{- if not $filecontent -}}
+{{- errorf "File %s not found" $filename -}}
+{{- end -}}
+{{ (print "[" $displayName "](" $filename ")\n"  ) }}
+{{ (print "```" $lang " " $opts "\n" $filecontent  "\n```\n" | safeHTML )}}
