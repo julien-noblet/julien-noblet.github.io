@@ -29,3 +29,6 @@ languages:
     weight: 1
   en:
     weight: 2
+caches:
+  images:
+    dir: :cacheDir/images
