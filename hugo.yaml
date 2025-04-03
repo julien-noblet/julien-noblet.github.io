@@ -15,7 +15,21 @@ Params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
-
+frontmatter:
+  date:
+  - date
+  - publishDate
+  - lastmod
+  expiryDate:
+  - expiryDate
+  lastmod:
+  - :git
+  - lastmod
+  - :fileModTime
+  - :default
+  publishDate:
+  - date
+  - publishDate
 languages:
   fr:
     weight: 1
