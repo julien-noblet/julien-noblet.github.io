@@ -36,6 +36,7 @@ frontmatter:
   - date
   - publishDate
   - lastmod
+  - :git
   expiryDate:
   - expiryDate
   lastmod:
