@@ -5,6 +5,13 @@ defaultContentLanguage : fr
 title: Mon blog
 theme: ["PaperMod"]
 enableGitInfo: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+minify:
+  disableXML: true
+  minifyOutput: true
 outputs:
   home:
     - HTML
@@ -15,6 +22,15 @@ Params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
+
+services:
+  googleAnalytics:
+    id: G-FTZ5LGGE0T
+privacy:
+  googleAnalytics:
+    disable: false
+    respectDoNotTrack: true
+    
 frontmatter:
   date:
   - date
