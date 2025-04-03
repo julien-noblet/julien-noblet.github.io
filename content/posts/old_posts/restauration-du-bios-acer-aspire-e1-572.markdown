@@ -5,6 +5,7 @@ categories:
 - BIOS
 comment: true
 date: "2015-05-10T00:00:00Z"
+editDate: "2025-04-03T00:00:00Z"
 cover:
   image: /assets/images/insyde_h2o_bios.png
   alt: insyde h2o bios logo

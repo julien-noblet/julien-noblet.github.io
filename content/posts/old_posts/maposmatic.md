@@ -4,6 +4,7 @@ categories:
 - OpenStreetMap
 comments: true
 date: "2015-02-16T00:00:00Z"
+NoLastmod: true
 cover:
   image: /assets/images/maposmatic-logo.png
 published: "2015-02-16T00:00:00Z"

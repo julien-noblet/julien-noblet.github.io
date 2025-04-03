@@ -4,6 +4,7 @@ languageCode: fr_fr
 defaultContentLanguage : fr
 title: Mon blog
 theme: ["PaperMod"]
+enableGitInfo: true
 outputs:
   home:
     - HTML
