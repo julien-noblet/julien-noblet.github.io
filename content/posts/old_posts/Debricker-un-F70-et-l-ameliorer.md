@@ -7,6 +7,7 @@ cover:
   image: /assets/images/f70.jpg
   responsiveImages: true
 published: "2015-10-18T00:00:00Z"
+NoLastmod: true
 tags:
 - F70
 - Android

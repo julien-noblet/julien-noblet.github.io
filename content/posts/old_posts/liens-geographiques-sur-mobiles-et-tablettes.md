@@ -10,6 +10,7 @@ description: Je vais vous présenter la RFC 5870 qui permet de faire des liens g
 cover:
   image: /assets/images/CodeWeb.jpg
 published: "2015-02-21T00:00:00Z"
+NoLastmod: true
 tags:
 - CAD-Killer
 - Cartes

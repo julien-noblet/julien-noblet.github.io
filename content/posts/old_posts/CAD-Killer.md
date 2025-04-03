@@ -15,6 +15,7 @@ tags:
 - CAD-Killer
 - OpenStreetMap
 title: CAD-Killer
+NoLastmod: true
 ---
 
 Je viens vous présenter [CAD-Killer](https://julien-noblet.github.io/cad-killer).
