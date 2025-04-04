@@ -7,10 +7,11 @@ comment: true
 date: "2015-02-12T00:00:00Z"
 cover:
   image: /assets/images/cad-killer.png
-redirect_from:
+aliases:
 - /pr%C3%A9sentations/2015/02/12/CAD-Killer/
 - /pr%C3%A9sentations/cadkiller/openstreetmap/2015/02/12/CAD-Killer/
 - /pr%C3%A9sentations/cad-killer/openstreetmap/2015/02/12/CAD-Killer/
+- /blog/2015/02/12/CAD-Killer
 tags:
 - CAD-Killer
 - OpenStreetMap
