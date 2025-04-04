@@ -8,8 +8,6 @@ NoLastmod: true
 cover:
   image: /assets/images/maposmatic-logo.png
 published: "2015-02-16T00:00:00Z"
-redirect_from:
-- /cartes/openstreetmap/2015/02/16/maposmatic/
 tags:
 - Cartes
 - MapOSMatic

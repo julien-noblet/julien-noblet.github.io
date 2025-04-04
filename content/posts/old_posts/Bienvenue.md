@@ -1,9 +1,6 @@
 ---
 date: "2015-02-11T00:00:00Z"
 icon: /assets/images/jekyll-mini.png
-redirect_from:
-- /2015/02/11/Bienvenue/
-- /2015/02/12/Bienvenue/
 tags:
 - JavaScript
 - NodeJs

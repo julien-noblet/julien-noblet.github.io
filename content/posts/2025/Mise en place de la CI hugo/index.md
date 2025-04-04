@@ -1,8 +1,6 @@
 ---
 categories:
 - Présentations
-redirect_from:
-- 2025/04/02/Et_on_recommence/
 date: "2025-04-02T01:00:00+02:00"
 tags:
 - hugo
