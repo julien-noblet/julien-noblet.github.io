@@ -16,6 +16,7 @@ tags:
 - OpenStreetMap
 title: CAD-Killer
 NoLastmod: true
+description: "Présentation de CAD-Killer, un outil basé sur OpenStreetMap et la BAN pour rechercher des adresses introuvables et imprimer des plans en France."
 ---
 
 Je viens vous présenter [CAD-Killer](https://julien-noblet.github.io/cad-killer).

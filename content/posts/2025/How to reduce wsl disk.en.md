@@ -6,6 +6,7 @@ tags:
 - wsl
 Language: en
 title: How to reduce wsl disk
+description: A guide to compacting and reducing the size of your WSL disk to save space.
 ---
 As you use WSL, the VHDX disk image will grow. You need to compact it!
 

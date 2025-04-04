@@ -10,6 +10,7 @@ tags:
 - OpenStreetMap
 title: Bienvenue
 NoLastmod: true
+description: "Un article de bienvenue sur mon site personnel, explorant JavaScript, OpenStreetMap et NodeJs."
 ---
 
 Bienvenue sur mon site personnel.
