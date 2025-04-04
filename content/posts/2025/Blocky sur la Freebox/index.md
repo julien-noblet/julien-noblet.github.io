@@ -13,6 +13,7 @@ tags:
 ShowToc: true
 date: "2025-04-02T19:00:00+02:00"
 title: Blocky sur la Freebox
+description: "Ce tutoriel explique comment configurer Blocky, un DNS menteur, sur une Freebox Delta pour filtrer les publicités et améliorer votre expérience de navigation."
 ---
 Depuis quelque temps, je remarque que de plus en plus de publicités sont très intrusives et s'invitent sur tous mes appareils !
 

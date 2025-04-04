@@ -5,6 +5,7 @@ date: "2025-04-02T23:00:00+02:00"
 tags:
 - wsl
 Language: fr
+Description: "Apprenez à réduire la taille de votre disque WSL en nettoyant, utilisant fstrim, et en compactant efficacement avec wslcompact."
 title: Réduire la taille du disque WSL
 ---
 Au fur et à mesure de l'utilisation, l'image disque VHDX va grossir. Il faut alors la compacter !

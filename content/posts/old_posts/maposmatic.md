@@ -16,6 +16,7 @@ tags:
 - OpenStreetMap
 - Livraison
 title: MapOSMatic
+description: "Présentation de MapOSMatic, un outil pour générer des cartes papier à partir des données OpenStreetMap, utile pour les livreurs et autres utilisateurs."
 ---
 
 Je tiens à vous présenter le site [MapOSMatic](https://maposmatic.org).
