@@ -8,6 +8,7 @@ tags:
 - hugo
 - CI
 title: Mise en place d'une CI github pages pour Hugo
+description: "Découvrez comment configurer une intégration continue (CI) pour déployer un site Hugo sur GitHub Pages."
 ---
 Toi aussi, tu veux commencer ton blog, mais tu veux tout automatiser ?
 
