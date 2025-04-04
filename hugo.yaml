@@ -3,6 +3,7 @@ disablePathToLower: true
 languageCode: fr_fr
 defaultContentLanguage : fr
 title: Mon blog
+description: Mon blog personnel, mes réflexions et mes projets
 theme: ["PaperMod"]
 enableGitInfo: true
 enableRobotsTXT: true
@@ -64,6 +65,8 @@ languages:
           url: /tags/
           weight: 20
   en:
+    title: My blog
+    description: My personal blog, my thoughts and my projects
     weight: 2
     taxonomies:
       categories: categories
