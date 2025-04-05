@@ -14,6 +14,7 @@ tags:
 - LG
 - unbrick
 title: Voici comment j'ai débrické mon F70 😉
+description: "Un guide pour débricker et améliorer un LG F70, incluant le rootage, l'intégration des mises à jour dans la ROM, et la résolution des erreurs de manipulation."
 ---
 
 Pour l'histoire, madame a un LG F70 depuis un an environ. Suite aux mises à jour des différents ~~bloatwares~~ applications fournies, il était devenu inutilisable :'(
