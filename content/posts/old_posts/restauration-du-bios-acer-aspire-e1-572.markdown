@@ -16,6 +16,7 @@ tags:
 - Réparation
 - Installation
 title: Restauration du BIOS ACER Aspire E1-572
+description: Ce tutoriel explique comment restaurer le BIOS d'un ordinateur portable ACER Aspire E1-572 en cas de panne, connue sous le nom de "Black Screen of the Death". Il détaille les étapes nécessaires pour préparer une clé USB, télécharger le BIOS approprié, et effectuer le flashage en toute sécurité.
 ---
 
 Ce week-end, alors que j'installais **ArchLinux** sur mon PC portable, le drame s'est produit : le BIOS m'a lâché.
