@@ -6,6 +6,7 @@ tags:
 - dotfiles
 - configuration
 - Linux
+ShowToc: true
 ---
 Il y a quelques temps, j'ai dû réinstaller mon environnement de travail Linux.
 
@@ -46,3 +47,23 @@ Là où est la magie, c'est qu'il va te permettre de scripter, de templater, de 
 Il va aussi te permettre de te prévenir que ton environnement n'est plus synchronisé avec le repo distant et te proposer de mettre à jour ton environnement.
 
 ## Installation ##
+
+On va l'installer avec [ASDF](/posts/2025/asdf) 
+
+```bash
+asdf plugin install chezmoi && asdf install chezmoi latest && asdf set -u chezmoi latest
+```
+On va aussi installer [AGE](https://age-encryption.org/), il nous servira pour chiffrer nos secrets.
+```bash
+asdf plugin install age && asdf install age latest && asdf set -u age latest
+```
+
+On va aussi préparer le repo git que l'on va utiliser pour publier/sauvegarder nos fichiers.
+Si vous avez un compte github, je vous invite à créer un repository "dotfiles".
+
+Maintenant on initialise:
+```bash
+chezmoi init --ssh <mon_user_github> --apply
+```
+(Si vous n'avez pas de compte github, ou souhaitez mettre vos dotfile ailleur, [consultez la doc](https://www.chezmoi.io/reference/commands/init/))
+
