@@ -23,7 +23,12 @@ Params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
+  
 
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/julien-noblet/"
 services:
   googleAnalytics:
     id: G-FTZ5LGGE0T
@@ -64,6 +69,17 @@ languages:
           name: Tags
           url: /tags/
           weight: 20
+    params:
+      homeInfoParams:
+        Title: Bienvenue sur mon blog
+        Content: >
+          ![Logo](/android-chrome-512x512.png)
+          Ici, vous trouverez mes réflexions et mes projets
+      editPost:
+        URL: "https://github.com/julien-noblet/julien-noblet.github.io/tree/main/content"
+        Text: "Suggérer une modification" # edit text
+        appendFilePath: true
+    
   en:
     title: My blog
     description: My personal blog, my thoughts and my projects
@@ -81,6 +97,16 @@ languages:
           name: Tags
           url: /tags/
           weight: 20
+    params:
+      homeInfoParams:
+        Title: Welcome to my blog
+        Content: >
+          ![Logo](/android-chrome-512x512.png)
+          Here you will find my thoughts and my projects
+      editPost:
+        URL: "https://github.com/julien-noblet/julien-noblet.github.io/tree/main/content"
+        Text: "Suggest Changes" # edit text
+        appendFilePath: true
 caches:
   images:
     dir: :cacheDir/images
