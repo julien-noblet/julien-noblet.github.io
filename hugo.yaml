@@ -84,6 +84,3 @@ languages:
 caches:
   images:
     dir: :cacheDir/images
-sitemap:
-  changefreq: weekly
-  priority: 0.8
