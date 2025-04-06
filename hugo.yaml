@@ -69,6 +69,10 @@ languages:
           name: Tags
           url: /tags/
           weight: 20
+        - identifier: CAD-Killer-site
+          name: CAD-Killer
+          url: https://julien-noblet.github.io/cad-killer/
+          weight: 30
     params:
       homeInfoParams:
         Title: Bienvenue sur mon blog
@@ -97,6 +101,10 @@ languages:
           name: Tags
           url: /tags/
           weight: 20
+        - identifier: CAD-Killer_site
+          name: CAD-Killer
+          url: https://julien-noblet.github.io/cad-killer/
+          weight: 30
     params:
       homeInfoParams:
         Title: Welcome to my blog
