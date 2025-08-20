@@ -55,9 +55,9 @@ In our case, chezmoi will update our `.tool-versions`, but it can also run the n
 
 Even better, you can combine templates and scripts to further automate your workflow.
 
-Let's create the file `run_onchange_dot_tool-version.sh.tmpl` in the `.chezmoiscripts/` folder.
+Let's create the file `run_onchange_dot_tool-versions.sh.tmpl` in the `.chezmoiscripts/` folder.
 
-{{% include displayName="`.chezmoiscripts/run_onchange_dot_tool-version.sh.tmpl` :" src=run_onchange_dot_tool-version.sh.tmpl lang=bash %}}
+{{% include displayName="`.chezmoiscripts/run_onchange_dot_tool-versions.sh.tmpl` :" src=run_onchange_dot_tool-versions.sh.tmpl lang=bash %}}
 
 ### Script explanation
 

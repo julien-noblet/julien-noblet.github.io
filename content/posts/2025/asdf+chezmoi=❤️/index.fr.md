@@ -55,9 +55,9 @@ Dans notre cas, chezmoi va bien mettre à jour notre `.tool-versions`, mais il p
 
 En prime, on peut combiner la notion de templates et de scripts pour automatiser encore plus notre flux de travail.
 
-Créons le fichier `run_onchange_dot_tool-version.sh.tmpl` dans le dossier `.chezmoiscripts/`.
+Créons le fichier `run_onchange_dot_tool-versions.sh.tmpl` dans le dossier `.chezmoiscripts/`.
 
-{{% include displayName="`.chezmoiscripts/run_onchange_dot_tool-version.sh.tmpl` :" src=run_onchange_dot_tool-version.sh.tmpl lang=bash %}}
+{{% include displayName="`.chezmoiscripts/run_onchange_dot_tool-versions.sh.tmpl` :" src=run_onchange_dot_tool-versions.sh.tmpl lang=bash %}}
 
 ### Explication du script
 
