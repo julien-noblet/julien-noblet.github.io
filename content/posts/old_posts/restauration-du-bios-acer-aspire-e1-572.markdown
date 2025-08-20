@@ -3,7 +3,7 @@ categories:
 - Réparation
 - Tutoriel
 - BIOS
-comment: true
+comments: true
 date: "2015-05-10T00:00:00Z"
 editDate: "2025-04-03T00:00:00Z"
 cover:

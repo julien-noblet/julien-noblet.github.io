@@ -3,7 +3,7 @@ categories:
 - Présentations
 - CAD-Killer
 - OpenStreetMap
-comment: true
+comments: true
 date: "2015-02-12T00:00:00Z"
 cover:
   image: /assets/images/cad-killer.png
