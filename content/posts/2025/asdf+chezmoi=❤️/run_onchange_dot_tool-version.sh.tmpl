@@ -1,0 +1,56 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+# function install_asdf
+
+function install_asdf() {
+	base_url="https://github.com/asdf-vm/asdf/releases/download/"
+	rm -f asdf-v{{ .asdf.version }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz*
+	wget "${base_url}v{{ .asdf.version }}/asdf-v{{ .asdf.version }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz"
+	tar -xvzf asdf-v{{ .asdf.version }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz -C ~/.asdf/bin
+	# clean up
+	rm -f asdf-v{{ .asdf.version }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz*
+	export ASDF_DATA_DIR={{ .chezmoi.config.destDir }}/.asdf
+	export PATH="$ASDF_DATA_DIR/shims:$ASDF_DATA_DIR/bin:$PATH"
+}
+
+# install asdf
+# if ~/.asdf not exist then install asdf
+if [ ! -d ~/.asdf ]; then
+	mkdir -p ~/.asdf/bin
+fi
+# if ~/.asdf/bin/asdf not exist or not executable then install asdf
+if [ ! -x ~/.asdf/bin/asdf ]; then
+	install_asdf
+fi
+# if asdf version is not the right one then install asdf
+if [ "$(~/.asdf/bin/asdf --version | cut -d ' ' -f 3)" != "v{{ .asdf.version }}" ]; then
+	install_asdf
+fi
+
+{{ range .asdf.tools -}}
+# install plugins
+# if .plugin_url does not exist then use ""
+if [ -z "$(~/.asdf/bin/asdf plugin list | grep {{ .name }})" ]; then
+	echo "installing {{.name}} plugin"
+	~/.asdf/bin/asdf plugin add {{ .name }} {{ .plugin_url | default "" }}
+else
+	# if plugin is already installed then update it
+	~/.asdf/bin/asdf plugin update {{ .name }}
+fi
+{{ end -}}
+
+{{ range .asdf.tools -}}
+# install tool
+# if tool is not installed then install it
+echo "installing {{.name}} {{.version}}"
+if [ -z "$(~/.asdf/bin/asdf list {{ .name }} | grep {{ .version }})" ]; then
+	~/.asdf/bin/asdf install {{ .name }} {{ .version }}
+fi
+# remove old versions
+for mytool in $(asdf list {{ .name }} | grep -v {{ .version }} | sed -e s/\*//); do 
+	echo "removing {{ .name }} $mytool"
+	asdf uninstall {{ .name }} $mytool; 
+done;
+{{ end -}}
+{{ end -}}
