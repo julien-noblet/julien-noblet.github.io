@@ -1,5 +1,5 @@
 ---
-date: "2015-02-11T00:00:00Z"
+date: "2015-02-11T00:00:00+02:00"
 icon: /assets/images/jekyll-mini.png
 tags:
 - JavaScript

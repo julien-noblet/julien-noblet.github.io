@@ -2,11 +2,11 @@
 categories:
 - Android
 comments: true
-date: "2015-10-18T00:00:00Z"
+date: "2015-10-18T00:00:00+02:00"
 cover:
   image: /assets/images/f70.jpg
   responsiveImages: true
-published: "2015-10-18T00:00:00Z"
+published: "2015-10-18T00:00:00+02:00"
 NoLastmod: true
 tags:
 - F70

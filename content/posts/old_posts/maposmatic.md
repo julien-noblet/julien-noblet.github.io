@@ -3,11 +3,11 @@ categories:
 - Cartes
 - OpenStreetMap
 comments: true
-date: "2015-02-16T00:00:00Z"
+date: "2015-02-16T00:00:00+02:00"
 NoLastmod: true
 cover:
   image: /assets/images/maposmatic-logo.png
-published: "2015-02-16T00:00:00Z"
+published: "2015-02-16T00:00:00+02:00"
 tags:
 - Cartes
 - MapOSMatic
