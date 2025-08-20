@@ -4,8 +4,8 @@ categories:
 - Tutoriel
 - BIOS
 comments: true
-date: "2015-05-10T00:00:00Z"
-editDate: "2025-04-03T00:00:00Z"
+date: "2015-05-10T00:00:00+02:00"
+editDate: "2025-04-03T00:00:00+02:00"
 cover:
   image: /assets/images/insyde_h2o_bios.png
   alt: insyde h2o bios logo

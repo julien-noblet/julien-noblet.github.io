@@ -4,7 +4,7 @@ categories:
 - CAD-Killer
 - OpenStreetMap
 comments: true
-date: "2015-02-12T00:00:00Z"
+date: "2015-02-12T00:00:00+02:00"
 cover:
   image: /assets/images/cad-killer.png
 aliases:
