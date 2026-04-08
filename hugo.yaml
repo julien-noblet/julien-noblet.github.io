@@ -3,8 +3,7 @@ disablePathToLower: true
 languageCode: fr_fr
 defaultContentLanguage : fr
 title: Mon blog
-author:
-  name: Julien Noblet
+author: Julien Noblet
 description: Mon blog personnel, mes réflexions et mes projets
 theme: ["PaperMod"]
 enableGitInfo: true
@@ -21,8 +20,7 @@ outputs:
     - RSS
     - JSON # necessary for search
 Params:
-  author:
-    name: Julien Noblet
+  author: Julien Noblet
   ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
@@ -59,8 +57,7 @@ frontmatter:
 languages:
   fr:
     weight: 1
-    author:
-      name: Julien Noblet
+    author: Julien Noblet
     taxonomies:
       categories: categories
       tags: tags
@@ -79,8 +76,7 @@ languages:
           url: https://julien-noblet.github.io/cad-killer/
           weight: 30
     params:
-      author:
-        name: Julien Noblet
+      author: Julien Noblet
       homeInfoParams:
         Title: Bienvenue sur mon blog
         Content: >
@@ -95,8 +91,7 @@ languages:
     title: My blog
     description: My personal blog, my thoughts and my projects
     weight: 2
-    author:
-      name: Julien Noblet
+    author: Julien Noblet
     taxonomies:
       categories: categories
       tags: tags
@@ -115,8 +110,7 @@ languages:
           url: https://julien-noblet.github.io/cad-killer/
           weight: 30
     params:
-      author:
-        name: Julien Noblet
+      author: Julien Noblet
       homeInfoParams:
         Title: Welcome to my blog
         Content: >
