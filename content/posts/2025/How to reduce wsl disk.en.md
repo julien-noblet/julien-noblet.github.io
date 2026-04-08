@@ -17,6 +17,7 @@ Start by cleaning up the disk. Each user can choose their preferred method.
 ## 2. fstrim
 
 Once everything is clean, you can force the system to discard unused elements from the image.
+
 ```shell
 sudo fstrim -av
 ```

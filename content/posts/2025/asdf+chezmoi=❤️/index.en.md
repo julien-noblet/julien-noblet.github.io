@@ -71,7 +71,7 @@ I'll just cover the main points:
 - For each tool, it ensures the version specified in `~/.tool-versions` is installed.
 - Finally, for each tool, it cleans up old versions.
 
-# Conclusion
+## Conclusion
 
 We've seen how to use chezmoi to manage tool versions with asdf. By combining templates and scripts, you can automate your workflow and ensure your tools are always up to date. Feel free to explore more chezmoi features and adapt them to your needs.
 

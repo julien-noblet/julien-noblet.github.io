@@ -17,6 +17,7 @@ On va nettoyer un peu le disque. Pour le coup, chacun sa méthode.
 ## 2. fstrim
 
 Maintenant que tout est propre, on peut forcer le système à vider les éléments non supprimés de l'image.
+
 ```shell
 sudo fstrim -av
 ```

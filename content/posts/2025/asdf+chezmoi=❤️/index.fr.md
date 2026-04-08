@@ -71,7 +71,7 @@ Je ne vais pas tout détailler mais seulement les grandes lignes :
 - Pour chaque outil, il s'assure que la version spécifiée dans `~/.tool-versions` est installée.
 - Enfin, pour chaque outil, il nettoie les anciennes versions.
 
-# Conclusion
+## Conclusion
 
 Nous avons vu comment utiliser chezmoi pour gérer les versions d'outils avec asdf. En combinant les templates et les scripts, nous pouvons automatiser notre flux de travail et nous assurer que nos outils sont toujours à jour. N'hésitez pas à explorer davantage les fonctionnalités de chezmoi et à les adapter à vos besoins.
 

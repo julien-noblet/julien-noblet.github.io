@@ -23,6 +23,7 @@ J'ai donc décidé de mettre en place un DNS menteur qui va filtrer les sites qu
 J'ai une Freebox Delta à la maison. Elle permet de lancer des VM sans avoir besoin d'un Raspberry Pi ou d'une autre machine allumée en permanence.
 
 ## 1. Installation d'un disque ##
+
 Vous devrez en installer un. Voici les étapes pour ajouter un disque à votre Freebox Delta :
 
 **Achetez un disque dur compatible** : Assurez-vous de choisir un disque dur 2,5" SATA compatible avec la Freebox Delta. Je vous conseille de prendre un SSD, cela ne coûte pas très cher.
@@ -38,6 +39,7 @@ Choisissez votre disque et configurez-le comme ceci :
 ![Formater le disque](Format.png)
 
 ## 2. Préparation de la VM ##
+
 Toujours sur l'interface de la Freebox, allez dans le menu "VMs", et ajoutez une VM :  
 ![Ajout d'une VM](Creer_vm1.png)  
 (vous pouvez lui donner un nom)
@@ -55,7 +57,8 @@ Une fois démarrée, vous devriez avoir l'IPv4 et l'IPv6 qui apparaissent, notez
 
 Connectez-vous via SSH.
 
-Voici un petit script pour "accélérer la mise en place", au programme :  
+Voici un petit script pour "accélérer la mise en place", au programme :
+
 - mise à jour de Debian  
 - installation de Docker
 
@@ -66,33 +69,33 @@ Reconnectez-vous (pour avoir les droits sur Docker).
 ## 3. Le(s) docker-compose ##
 
 Créez un dossier "*blocky*" et un sous-dossier "*docker-compose*" :
+
 ```bash
 mkdir -p ~/blocky/docker-compose
 ```
 
 Nous allons découper notre composition docker en plusieurs services.
 
-### {{% include displayName=~/blocky/docker-compose.yml src=docker-compose.yml lang=yml %}}
+### {{% include displayName=~/blocky/docker-compose.yml src=docker-compose.yml lang=yml %}} ###
 
-### {{% include displayName=~/blocky/docker-compose/docker-compose.traefik.yml src=docker-compose.traefik.yml lang=yml %}}
+### {{% include displayName=~/blocky/docker-compose/docker-compose.traefik.yml src=docker-compose.traefik.yml lang=yml %}} ###
 
-### {{% include displayName=~/blocky/docker-compose/docker-compose.blocky.yml src=docker-compose.blocky.yml lang=yml %}}
+### {{% include displayName=~/blocky/docker-compose/docker-compose.blocky.yml src=docker-compose.blocky.yml lang=yml %}} ###
 
-### {{% include displayName=~/blocky/docker-compose/docker-compose.lists-download.yml src=docker-compose.lists-download.yml lang=yml %}}
-
+### {{% include displayName=~/blocky/docker-compose/docker-compose.lists-download.yml src=docker-compose.lists-download.yml lang=yml %}} ###
 
 ## 4. Configuration ##
 
 On crée les différents dossiers:
+
 ```bash
 mkdir -p ~/blocky/lists_updaters/watch ~/blocky/lists_updaters/sources ~/blocky/docker-compose/blocky
 ```
 
-
-### {{% include displayName=~/blocky/docker-compose/blocky/config.yml src=config.yml lang=yml %}}
-
+### {{% include displayName=~/blocky/docker-compose/blocky/config.yml src=config.yml lang=yml %}} ###
 
 Modifiez la zone à votre convenance, pensez bien à noter vos IP:
+
 ```yaml
   zone: |
     $ORIGIN local.
@@ -100,32 +103,33 @@ Modifiez la zone à votre convenance, pensez bien à noter vos IP:
     dns     3600  AAAA  2a01:monIPv6:::::
     @       3600  CNAME dns
     mafreebox     A     192.168.1.254
-    grafana       CNAME	dns
-    blocky        CNAME	dns
+    grafana       CNAME dns
+    blocky        CNAME dns
 ```
 
-### On va maintenant ajouter les listes:
-### {{% include displayName=~/blocky/lists_updaters/watch/allowed-list.txt src=allowed-list.txt lang=ini %}}
+### On va maintenant ajouter les listes de filtrage ###
 
+### {{% include displayName=~/blocky/lists_updaters/watch/allowed-list.txt src=allowed-list.txt lang=ini %}} ###
 
-### {{% include displayName=~/blocky/lists_updaters/watch/blocked-list.txt src=blocked-list.txt lang=ini %}}
+### {{% include displayName=~/blocky/lists_updaters/watch/blocked-list.txt src=blocked-list.txt lang=ini %}} ###
 
+### {{% include displayName=~/blocky/lists_updaters/sources/group_one.txt src=group_one.txt lang=ini %}} ###
 
-### {{% include displayName=~/blocky/lists_updaters/sources/group_one.txt src=group_one.txt lang=ini %}}
-
-### {{% include displayName=~/blocky/lists_updaters/sources/hagezi.txt src=group_one.txt lang=ini %}}
-
+### {{% include displayName=~/blocky/lists_updaters/sources/hagezi.txt src=group_one.txt lang=ini %}} ###
 
 ## 5. On lance ##
 
 Placez-vous dans le dossier *~/blocky* puis lancez la composition docker.
+
 ```bash
 cd ~/blocky
 docker compose up -d
 ```
+
 Docker va télécharger les images et lancer les services.
 
 Pour tester :
+
 ```bash
 sudo apt install -y bind9-dnsutils
 nslookup google.fr 192.168.1.X # <-- remplacez par l'ip de la VM
@@ -143,4 +147,3 @@ Allez dans l'onglet "**Baux statiques**", et cliquez sur "**Ajouter un bail stat
 *Lors d'une prochaine connexion, Blocky sera utilisé comme serveur DNS.*
 
 **Si vous avez besoin de revenir en arrière, il faut remettre l'IP de la Freebox (192.168.1.254) dans le champ *Serveur DNS 1*.**
-
