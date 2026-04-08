@@ -8,4 +8,4 @@ test-hugo:
 
 test-md:
 	@command -v npx >/dev/null 2>&1 || { echo "npx n'est pas installé (installez Node.js/npm)"; exit 1; }
-	npx --yes markdownlint-cli2 "content/**/*.md" "content/**/*.markdown"
+	npx --yes markdownlint-cli2@0.18.1

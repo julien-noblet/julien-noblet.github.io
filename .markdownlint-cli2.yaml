@@ -1,0 +1,9 @@
+globs:
+  - content/**/*.md
+  - content/**/*.markdown
+
+ignores:
+  - public/**
+  - themes/**
+
+config: .markdownlint.jsonc
