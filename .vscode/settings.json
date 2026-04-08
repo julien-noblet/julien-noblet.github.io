@@ -12,6 +12,7 @@
     "editor.rulers": [80]
 },
 "chat.tools.terminal.autoApprove": {
-    "npx --yes markdownlint-cli2@0.18.1": true
+    "npx --yes markdownlint-cli2@0.18.1": true,
+    "make": true
 }
 }
