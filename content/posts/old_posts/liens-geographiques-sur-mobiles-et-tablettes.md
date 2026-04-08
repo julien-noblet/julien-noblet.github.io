@@ -1,16 +1,14 @@
 ---
 comments: true
-date: "2015-02-21T00:00:00Z"
-categories:
+Scategories:
 - CAD-Killer
 - Cartes
 - HTML5
-comments: true
 date: "2015-02-21T00:00:00+02:00"
 description: Je vais vous présenter la RFC 5870 qui permet de faire des liens géographiques compris par les smartphones et d'avoir la possibilité de faire un lien vers la fonction GPS. Oui, mais voilà, l'affichage, c'est bien, la navigation... c'est encore mieux !
 
 cover:
-  image: /assets/images/CodeWeb.jpg
+  image: /assets/images/CodeSWeb.jpg
 published: "2015-02-21T00:00:00+02:00"
 NoLastmod: true
 tags:
