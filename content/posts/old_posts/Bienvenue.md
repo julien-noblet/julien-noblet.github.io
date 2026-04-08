@@ -7,12 +7,16 @@ tags:
 - OpenStreetMap
 title: Bienvenue
 NoLastmod: true
-description: "Un article de bienvenue sur mon site personnel, explorant JavaScript, OpenStreetMap et NodeJs."
+description: >-
+  "Un article de bienvenue sur mon site personnel, explorant JavaScript,
+  OpenStreetMap et NodeJs."
 ---
 
 Bienvenue sur mon site personnel.
 
-Ici, on va parler de [**JavaScript**](/tags.html#JavaScript-ref), d'[**OpenStreetMap**](/tags.html#OpenStreetMap-ref), de [**NodeJs**](/tags.html#NodeJs-ref),...
+Ici, on va parler de [**JavaScript**](/tags.html#JavaScript-ref),
+d'[**OpenStreetMap**](/tags.html#OpenStreetMap-ref), de
+[**NodeJs**](/tags.html#NodeJs-ref),...
 
 <!--more-->
 
