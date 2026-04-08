@@ -24,14 +24,13 @@ title: Liens géographiques sur mobiles et tablettes
 Heureusement, les développeurs ont pensé à tout !
 La **[RFC 5870](http://tools.ietf.org/rfc/rfc5870)** permet de définir un lien vers des coordonnées géographiques.
 
-Et ça donne quoi ?
-------------------
+## Et ça donne quoi ? ##
 
 Pour simplifier, c'est un lien au format URI :
 
-~~~
+```text
 geo:LAT,LON,ALT
-~~~
+```
 
 LAT et LON sont en degrés décimaux, l'altitude en mètres est facultative.
 On peut également ajouter des options :
@@ -44,14 +43,13 @@ Par exemple :
 
 Voici l'[Arc de triomphe à Paris](geo:48.87379,2.29505)
 
-{{< highlight html >}}
+```html
 Voici l'<a href="geo:48.87379,2.29505">Arc de triomphe à Paris</a>
-{{< / highlight >}}
+```
 
 Vous pouvez vérifier les coordonnées sur [OpenStreetMap](http://www.openstreetmap.org/?map=19/48.87379/2.29505#map=19/48.87379/2.29505)
 
-Où est l'avantage de ces liens ?
---------------------------------
+## Où est l'avantage de ces liens ? ##
 
 Les navigateurs web sur mobiles savent décoder ces liens nativement et vont automatiquement lancer l'application dédiée à l'affichage de carte et/ou à la navigation du système.
 

@@ -25,7 +25,7 @@ Et surtout :
 
 C'est alors que j'ai trouvé ce petit outil qui va résoudre ~~tous~~ mes problèmes !
 
-## [ASDF](https://asdf-vm.com/) !
+## [ASDF](https://asdf-vm.com/)
 
 Il se présente sous la forme d'un binaire à poser dans votre `$PATH` (~/bin par exemple).
 
@@ -33,6 +33,7 @@ Ensuite il faut ajouter 3 lignes à votre `.bashrc` / `.zshrc` / `.fichier_de_co
 [Plus de détails ici](https://asdf-vm.com/guide/getting-started.html)
 
 Par exemple pour Bash :
+
 ```bash
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
@@ -42,7 +43,7 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 Ensuite, il vous permet d'installer une foultitude d'outils dans presque toutes les versions !
 Il y arrive grâce aux plugins que l'équipe a sélectionnés mais vous pouvez aussi prendre ceux de la communauté ou créer les vôtres !
 
-## Exemple avec [Go](https://go.dev/) :
+## Exemple avec [Go](https://go.dev/)
 
 Imaginons que j'ai besoin de tester un soft avec la version 1.24.2 parce qu'il y a une implémentation d'une fonctionnalité hyper cool...
 
@@ -57,7 +58,7 @@ asdf install golang 1.24.2
 Simple non ? En plus je n'ai plus besoin de rajouter le plugin pour les prochaines fois !
 ![go version](install_go_1.png)
 
-Bon bah, ça marche pas... Et en plus j'ai cassé mon Go ! 
+Bon bah, ça marche pas... Et en plus j'ai cassé mon Go !
 
 Détrompe-toi, c'est maintenant que la magie va opérer !
 Va dans ton projet et entre la formule magique ```asdf set golang 1.24.2``` ![asdf set golang 1.24.2](install_go_2.png)
