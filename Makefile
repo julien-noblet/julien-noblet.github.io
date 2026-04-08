@@ -1,4 +1,4 @@
-.PHONY: test test-hugo test-md
+.PHONY: test test-hugo test-md test-md-all
 
 test: test-hugo test-md
 
@@ -8,4 +8,8 @@ test-hugo:
 
 test-md:
 	@command -v npx >/dev/null 2>&1 || { echo "npx n'est pas installé (installez Node.js/npm)"; exit 1; }
-	npx --yes markdownlint-cli2@0.18.1
+	bash scripts/lint-markdown.sh --changed
+
+test-md-all:
+	@command -v npx >/dev/null 2>&1 || { echo "npx n'est pas installé (installez Node.js/npm)"; exit 1; }
+	bash scripts/lint-markdown.sh --all
