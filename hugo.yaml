@@ -3,6 +3,8 @@ disablePathToLower: true
 languageCode: fr_fr
 defaultContentLanguage : fr
 title: Mon blog
+author:
+  name: Julien Noblet
 description: Mon blog personnel, mes réflexions et mes projets
 theme: ["PaperMod"]
 enableGitInfo: true
@@ -56,6 +58,8 @@ frontmatter:
 languages:
   fr:
     weight: 1
+    author:
+      name: Julien Noblet
     taxonomies:
       categories: categories
       tags: tags
@@ -88,6 +92,8 @@ languages:
     title: My blog
     description: My personal blog, my thoughts and my projects
     weight: 2
+    author:
+      name: Julien Noblet
     taxonomies:
       categories: categories
       tags: tags
