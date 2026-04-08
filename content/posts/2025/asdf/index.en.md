@@ -25,7 +25,7 @@ And especially:
 
 That's when I found this little tool that will solve ~~all~~ my problems!
 
-## [ASDF](https://asdf-vm.com/) !
+## [ASDF](https://asdf-vm.com/)
 
 It comes as a binary that you place in your `$PATH` (e.g., ~/bin).
 
@@ -33,6 +33,7 @@ Then, you need to add 3 lines to your `.bashrc` / `.zshrc` / `.your_favorite_she
 [More details here](https://asdf-vm.com/guide/getting-started.html)
 
 For example, for Bash:
+
 ```bash
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
@@ -42,7 +43,7 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 After that, it allows you to install a multitude of tools in almost any version!
 It achieves this through plugins selected by the team, but you can also use community plugins or create your own!
 
-## Example with [Go](https://go.dev/) :
+## Example with [Go](https://go.dev/)
 
 Imagine I need to test some software with version 1.24.2 because it includes a super cool feature...
 
