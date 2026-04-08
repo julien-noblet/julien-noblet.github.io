@@ -21,6 +21,9 @@ outputs:
     - RSS
     - JSON # necessary for search
 Params:
+  author:
+    name: Julien Noblet
+    email: REDACTED
   ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
@@ -78,6 +81,9 @@ languages:
           url: https://julien-noblet.github.io/cad-killer/
           weight: 30
     params:
+      author:
+        name: Julien Noblet
+        email: REDACTED
       homeInfoParams:
         Title: Bienvenue sur mon blog
         Content: >
@@ -112,6 +118,9 @@ languages:
           url: https://julien-noblet.github.io/cad-killer/
           weight: 30
     params:
+      author:
+        name: Julien Noblet
+        email: REDACTED
       homeInfoParams:
         Title: Welcome to my blog
         Content: >
