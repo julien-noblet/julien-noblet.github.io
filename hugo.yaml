@@ -23,12 +23,10 @@ outputs:
 Params:
   author:
     name: Julien Noblet
-    email: REDACTED
   ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
-  
 
   socialIcons:
     - name: github
@@ -83,7 +81,6 @@ languages:
     params:
       author:
         name: Julien Noblet
-        email: REDACTED
       homeInfoParams:
         Title: Bienvenue sur mon blog
         Content: >
@@ -120,7 +117,6 @@ languages:
     params:
       author:
         name: Julien Noblet
-        email: REDACTED
       homeInfoParams:
         Title: Welcome to my blog
         Content: >
