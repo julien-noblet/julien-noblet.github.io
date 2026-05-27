@@ -3,24 +3,20 @@
 OFFSET ?= 0
 SIZE ?= 10
 
-test: test-hugo test-md
+test:
+	nix develop --command test-all
 
 test-hugo:
-	@command -v hugo >/dev/null 2>&1 || { echo "hugo n'est pas installé"; exit 1; }
-	hugo --gc --minify
+	nix develop --command test-hugo
 
 test-md:
-	@command -v npx >/dev/null 2>&1 || { echo "npx n'est pas installé (installez Node.js/npm)"; exit 1; }
-	bash scripts/lint-markdown.sh --changed
+	nix develop --command test-md
 
 test-md-all:
-	@command -v npx >/dev/null 2>&1 || { echo "npx n'est pas installé (installez Node.js/npm)"; exit 1; }
-	bash scripts/lint-markdown.sh --all
+	nix develop --command test-md-all
 
 test-md-backlog:
-	@command -v npx >/dev/null 2>&1 || { echo "npx n'est pas installé (installez Node.js/npm)"; exit 1; }
-	bash scripts/lint-markdown.sh --backlog
+	nix develop --command test-md-backlog
 
 test-md-batch:
-	@command -v npx >/dev/null 2>&1 || { echo "npx n'est pas installé (installez Node.js/npm)"; exit 1; }
-	bash scripts/lint-markdown.sh --batch $(OFFSET) $(SIZE)
+	nix develop --command test-md-batch $(OFFSET) $(SIZE)
