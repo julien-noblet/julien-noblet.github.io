@@ -5,7 +5,7 @@ set -euo pipefail
 mode="${1:---changed}"
 
 run_markdownlint_all_capture() {
-  npx --yes markdownlint-cli2@0.18.1 2>&1 || true
+  markdownlint-cli2  2>&1 || true
 }
 
 list_backlog_files() {
@@ -20,7 +20,7 @@ is_markdown_path() {
 }
 
 lint_all() {
-  npx --yes markdownlint-cli2@0.18.1
+  markdownlint-cli2
 }
 
 lint_batch() {
@@ -42,7 +42,7 @@ lint_batch() {
   printf 'Linting batch (%s files):\n' "${#files[@]}"
   printf ' - %s\n' "${files[@]}"
 
-  npx --yes markdownlint-cli2@0.18.1 "${files[@]}" --no-globs
+  markdownlint-cli2 "${files[@]}" --no-globs
 }
 
 lint_changed_local() {
@@ -68,7 +68,7 @@ lint_changed_local() {
     return 0
   fi
 
-  npx --yes markdownlint-cli2@0.18.1 "${files[@]}" --no-globs
+  markdownlint-cli2 "${files[@]}" --no-globs
 }
 
 case "$mode" in

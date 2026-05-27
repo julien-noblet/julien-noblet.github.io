@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 defaults:
   run:
@@ -27,11 +28,10 @@ jobs:
         uses: cachix/install-nix-action@v30
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Build with Hugo
-        run: |
-          nix develop --command hugo \
-            --gc \
-            --minify
+        run: nix develop --command build-hugo
 
   markdown-lint:
     runs-on: ubuntu-latest
@@ -44,6 +44,8 @@ jobs:
         uses: cachix/install-nix-action@v30
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Select changed markdown files
         id: changed-md
         run: |
@@ -82,7 +84,7 @@ jobs:
 
       - name: Lint changed Markdown
         if: steps.changed-md.outputs.has_files == 'true'
-        run: nix develop --command bash -c "xargs -d '\n' npx --yes markdownlint-cli2@0.18.1 --no-globs < changed-markdown.txt"
+        run: nix develop --command bash -c "xargs -d '\n' markdownlint-cli2 --no-globs < changed-markdown.txt"
       - name: Lint Markdown
         if: steps.changed-md.outputs.has_files != 'true'
         run: echo "No changed markdown files to lint."
