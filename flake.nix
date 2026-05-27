@@ -35,6 +35,12 @@
             echo " Git:  $(git --version | cut -d' ' -f3)"
             echo " Make: $(make --version | head -n1)"
             echo "--------------------------------------------------"
+
+            # Automatically initialize Git submodules if they are missing
+            if [ -d .git ] && [ ! -f "themes/PaperMod/theme.toml" ]; then
+              echo "Initializing Git submodules..."
+              git submodule update --init --recursive
+            fi
           '';
         };
       });
