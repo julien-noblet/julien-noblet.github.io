@@ -31,7 +31,7 @@ jobs:
       - name: Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Build with Hugo
-        run: nix develop --command test-hugo
+        run: nix develop --command build-hugo
 
   markdown-lint:
     runs-on: ubuntu-latest
