@@ -10,7 +10,7 @@ categories:
 - tips
 - tools
 description: >-
-  "Discover how to use ASDF to easily manage different development tool versions and simplify your workflow."
+  "Why and how I moved from ASDF (and Mise) to Nix and Flakes for declarative and reproducible development environments."
 ---
 
 After testing [ASDF](/en/tags/asdf/) for some time,
@@ -63,12 +63,12 @@ And I don't have time to audit every repo! (Who does?)
 Pronounced /meez ahn plahs/
 
 There is [mise](https://mise.jdx.dev/) which can secure this,
-and it also allows managing programs via registries like [aqua](https://aquaproj.org/)
+and it also allows managing programs via registries like [aqua](https://aquaproj.github.io/).
 
 The workflow is almost the same as [ASDF](/en/tags/asdf/), but it is faster
-(there are no shims, it cleverly adjusts your `$PATH`)
+(there are no shims, it cleverly adjusts your `$PATH`).
 
-It also allows hooks and plenty of nice features.
+It also supports hooks and plenty of nice features.
 
 I will probably write about it again since I am trying to push this solution
 at work.
@@ -80,7 +80,7 @@ programs are installed in a folder to which the current user has access.
 
 In a flash, I can break a program, and fixing it is never easy.
 
-## OK, just don't play around with ~/.local and it should be fine, right?
+## OK, just don't play around with `~/.local` and it should be fine, right?
 
 Yes.
 
@@ -103,7 +103,7 @@ This way, it's impossible to break a program by modifying a file.
 
 [Nix](/en/tags/nix/) is pretty cool, but in my opinion, it really shines with Flakes.
 
-Flakes adds an abstraction layer and also pins versions.
+Flakes add an abstraction layer and also pin versions.
 (A bit like `go.sum` or `package-lock.json` but for everything!)
 
 Here is an example of a `flake.nix` used for this site:
@@ -165,7 +165,8 @@ We define our inputs here, and in our case, we "just" use the nixpkgs repo.
 Then, we define the list of programs and the commands to run when opening
 the shell.
 
-Here, we add a small hook to initialize Git submodules if they are not already.
+Here, we add a small hook to initialize Git submodules
+if they are not already initialized.
 
 Note that the `allSystems` part defines the systems for which we want to
 build our shell. And `forAllSystems` is just a helper function to avoid

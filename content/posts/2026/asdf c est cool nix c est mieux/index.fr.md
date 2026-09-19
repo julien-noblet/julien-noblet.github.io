@@ -10,8 +10,8 @@ categories:
 - tips
 - tools
 description: >-
-  "Découvrez comment utiliser asdf pour gérer facilement différentes versions
-  d'outils de développement et simplifier votre workflow."
+  "Pourquoi et comment je suis passé d'ASDF (et Mise) à Nix et ses Flakes pour
+  obtenir des environnements de développement reproductibles et déclaratifs."
 ---
 
 Après avoir testé [asdf](/tags/asdf/) pendant quelque temps,
@@ -29,10 +29,10 @@ Avec [ASDF](/tags/asdf/), on a le `~/.tool-versions` qui nous permet de dire
 quelle version utiliser. Et c'est cool.
 
 Mais (et il y en a). Souvent, j'utilisais le `~/.tool-versions` pour définir
-la version globale que j'utilisais. J'ai même fait une règle renovate pour
+la version globale que j'utilisais. J'ai même fait une règle Renovate pour
 cela : [renovate.json5](https://github.com/julien-noblet/dotfiles/blob/master/renovate.json5)
 
-Donc à chaque fois, j'ai mon environnement +/- à jour...
+Donc à chaque fois, j'ai mon environnement plus ou moins à jour...
 
 Dont mes outils de dev !
 
@@ -43,19 +43,19 @@ Un autre souci me tracassait : comment m'assurer d'avoir exactement la même ver
 Et surtout, si je change de poste,
 comment être sûr d'avoir exactement les mêmes outils ?
 
-(Oui node20, ça peut être node 20.0, 20.1, 20.2...)
+(Oui Node 20, ça peut être Node 20.0, 20.1, 20.2...)
 
-Un autre truc relou : comment installer des outils customs ?
+Un autre truc relou : comment installer des outils custom ?
 
 Avec [ASDF](/tags/asdf/), il faut faire un nouveau plugin, le pousser,
 l'ajouter dans sa configuration...
-Un enfer!
+Un enfer !
 
 Et puis j'ai eu des fois où j'ai dû me battre avec `asdf reshim`.
 
 Dernier point (qui est un peu lié au précédent),
-j'ai eu besoin de plus en plus de plugins customs faits par des tiers.
-Comment m'assurer que l'un des plugins n'embarque pas de code malicieux ?
+j'ai eu besoin de plus en plus de plugins custom faits par des tiers.
+Comment m'assurer que l'un des plugins n'embarque pas de code malveillant ?
 
 Surtout avec un plugin utilisé par peu de monde, le risque est plus élevé.
 Et je n'ai pas le temps d'auditer tous les repos ! (Qui l'a ?)
@@ -63,12 +63,12 @@ Et je n'ai pas le temps d'auditer tous les repos ! (Qui l'a ?)
 ## Mise (en place)
 
 Il y a [mise](https://mise.jdx.dev/) qui peut sécuriser cela,
-en plus il permet de gérer aussi des programmes via des registries comme [aqua](https://aquaproj.org/)
+en plus il permet de gérer aussi des programmes via des registries comme [aqua](https://aquaproj.github.io/).
 
 Le workflow est quasi le même que [ASDF](/tags/asdf/), mais c'est plus rapide
-(on n'a pas de shim, il ajuste astucieusement votre `$PATH`)
+(on n'a pas de shim, il ajuste astucieusement votre `$PATH`).
 
-Il permet aussi de faire des `hooks` et plein de fonctionnalités sympas.
+Il permet aussi de définir des hooks et propose plein de fonctionnalités sympas.
 
 Je reviendrai dessus, je pense, car j'essaie de pousser cette solution au bureau.
 
@@ -79,7 +79,7 @@ les programmes sont installés dans un dossier auquel l'utilisateur courant a ac
 
 En un éclair, je peux casser un programme et pour le remettre, ce n'est jamais simple.
 
-## OK, il suffit de ne pas jouer avec le `~/.local` et ça passe, non ?
+## OK, il suffit de ne pas jouer avec `~/.local` et ça passe, non ?
 
 Oui.
 
@@ -103,7 +103,7 @@ Comme ça, il est impossible de casser un programme en modifiant un fichier.
 [Nix](/tags/nix/), ce n'est pas mal, mais c'est avec les Flakes que cela prend
 tout son sens selon moi.
 
-Flakes va ajouter une couche d'abstraction et permettre également de figer
+Les Flakes vont ajouter une couche d'abstraction et permettre également de figer
 les versions.
 (Un peu comme le `go.sum` ou `package-lock.json` mais pour tout !)
 
@@ -227,27 +227,28 @@ Je n'ai pas vraiment besoin de connaître la version que j'ai.
 J'ai simplement besoin de savoir que ça marche sur mon poste,
 donc ça va marcher ailleurs.
 
-## Et le build?
+## Et le build ?
 
 Le build aussi utilisera [Nix](/tags/nix/), et avec les mêmes versions
 à l'octet près !
-Modulo l'OS et l'architecture CPU (les `allSystems`) mais dans ce cas,
+Modulo l'OS et l'architecture CPU (les `allSystems`), mais dans ce cas,
 ils utiliseront exactement le même code source d'origine pour
 la compilation des programmes !
 
-Et cela que je sois sous Ubuntu, Debian, NixOS, Suse, Fedora ...
+Et cela, que je sois sous Ubuntu, Debian, NixOS, Suse, Fedora...
 
 ## NixOS ?
 
 NixOS est une distribution Linux basée sur [Nix](/tags/nix/).
 Elle utilise [Nix](/tags/nix/) pour gérer les paquets et les configurations.
 
-Donc on ne charge plus ici que les outils de dev, mais vraiment tout le système.
+Ici, on ne configure plus seulement les outils de dev,
+mais véritablement tout le système.
 Du noyau, en passant par la configuration de la carte graphique, des disques,
 des outils système...
 
 Cela permet de pousser le GitOps à son paroxysme !
 Je peux même générer des images prêtes à l'emploi pour mes Raspberry Pi.
 
-Bref, [ASDF](/tags/asdf/), c'était cool, [Nix](/tags/nix/) c'est vraiment
+Bref, [ASDF](/tags/asdf/), c'était cool, mais [Nix](/tags/nix/), c'est vraiment
 mieux 😉 !
