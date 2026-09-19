@@ -25,27 +25,14 @@
             git
             markdownlint-cli2
 
-            # Custom development scripts
             (writeShellScriptBin "build-hugo" ''
               exec hugo --gc --minify "$@"
             '')
-            (writeShellScriptBin "lint-md" ''
-              exec bash scripts/lint-markdown.sh --changed "$@"
-            '')
-            (writeShellScriptBin "lint-md-all" ''
-              exec bash scripts/lint-markdown.sh --all "$@"
-            '')
-            (writeShellScriptBin "lint-md-backlog" ''
-              exec bash scripts/lint-markdown.sh --backlog "$@"
-            '')
-            (writeShellScriptBin "test-md-batch" ''
-              exec bash scripts/lint-markdown.sh --batch "$@"
-            '')
             (writeShellScriptBin "test-all" ''
               echo "==> Running Hugo build..."
-              build-hugo
-              echo "==> Running markdown linting (changed files)..."
-              lint-md
+              hugo --gc --minify
+              echo "==> Running markdown linting..."
+              markdownlint-cli2
             '')
           ];
 
@@ -57,11 +44,7 @@
             echo "--------------------------------------------------"
             echo " Available custom commands:"
             echo "   build-hugo      - Build Hugo site (with --gc and --minify)"
-            echo "   lint-md         - Lint changed markdown files"
-            echo "   lint-md-all     - Lint all markdown files"
-            echo "   lint-md-backlog - List markdown files with lint errors"
-            echo "   lint-md-batch   - Lint a batch of backlog files (args: <offset> <size>)"
-            echo "   test-all        - Run all tests (hugo + markdown)"            
+            echo "   test-all        - Run all tests (hugo + markdown)"
             echo "--------------------------------------------------"
 
             # Automatically initialize Git submodules if they are missing

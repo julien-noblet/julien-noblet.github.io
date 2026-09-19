@@ -38,53 +38,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
       - name: Install Nix
         uses: cachix/install-nix-action@v30
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@main
-      - name: Select changed markdown files
-        id: changed-md
-        run: |
-          set -euo pipefail
-
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            base_ref="${{ github.base_ref }}"
-            git fetch --no-tags --depth=1 origin "$base_ref"
-            diff_range="origin/$base_ref...HEAD"
-          elif [[ "${{ github.event_name }}" == "push" ]]; then
-            before="${{ github.event.before }}"
-            after="${{ github.sha }}"
-            if [[ "$before" == "0000000000000000000000000000000000000000" ]]; then
-              diff_range=""
-            else
-              diff_range="$before...$after"
-            fi
-          else
-            diff_range=""
-          fi
-
-          if [[ -z "$diff_range" ]]; then
-            echo "has_files=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          mapfile -t files < <(git diff --name-only --diff-filter=ACMRT "$diff_range" | grep -E '^content/.*\.(md|markdown)$' || true)
-
-          if (( ${#files[@]} == 0 )); then
-            echo "has_files=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          printf '%s\n' "${files[@]}" > changed-markdown.txt
-          echo "has_files=true" >> "$GITHUB_OUTPUT"
-
-      - name: Lint changed Markdown
-        if: steps.changed-md.outputs.has_files == 'true'
-        run: nix develop --command bash -c "xargs -d '\n' markdownlint-cli2 --no-globs < changed-markdown.txt"
       - name: Lint Markdown
-        if: steps.changed-md.outputs.has_files != 'true'
-        run: echo "No changed markdown files to lint."
+        run: nix develop --command markdownlint-cli2
