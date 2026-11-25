@@ -36,4 +36,17 @@ tags
 
 # Coc configuration directory (optional)
 vim/
-.direnv/
+
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+
+# pre-commit
+.pre-commit-config.yaml
+
+# Python
+__pycache__/
+
+# Nix-fetched frontend vendor assets
+static/vendor/

@@ -1,8 +1,9 @@
 {
-    "extends": [
-        "config:base"
-    ],
-    "nix": {
-        "enabled": true
-    }
+  "extends": ["config:base"],
+  "nix": {
+    "enabled": true
+  },
+  "git-submodules": {
+    "enabled": true
+  }
 }

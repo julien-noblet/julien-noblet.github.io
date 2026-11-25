@@ -1,11 +1,9 @@
 globs:
   - content/**/*.md
   - content/**/*.markdown
-
 ignores:
   - public/**
   - themes/**
-
 config:
   default: true
   MD013:

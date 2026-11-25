@@ -1,5 +1,4 @@
 name: blocky
-
 services:
   blocky:
     image: spx01/blocky:latest
@@ -37,7 +36,6 @@ services:
     hostname: blocky
     security_opt:
       - no-new-privileges:true
-
   postgres:
     image: 'pgautoupgrade/pgautoupgrade:17-alpine'
     container_name: postgres
@@ -54,7 +52,7 @@ services:
       - blocky
     restart: unless-stopped
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "blocky" ]
+      test: ["CMD", "pg_isready", "-U", "blocky"]
       interval: 10s
       start_period: 30s
     # By default, a Postgres database is running on the 5432 port.
@@ -74,13 +72,11 @@ services:
           memory: 64M
     security_opt:
       - no-new-privileges:true
-
 networks:
   blocky:
     # Give DNS!!!
     internal: true
     name: blocky_network
-
 volumes:
   blocky_config:
     # ./blocky

@@ -1,5 +1,4 @@
 name: list_download
-
 services:
   lists-download:
     image: shizunge/blocky-lists-updater:latest
@@ -40,9 +39,8 @@ services:
       - public
       - traefik
     restart: unless-stopped
-
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8080/index.html" ]
+      test: ["CMD", "curl", "-f", "http://localhost:8080/index.html"]
       interval: 1m30s
       timeout: 30s
       retries: 5
@@ -57,7 +55,6 @@ services:
       traefik.http.routers.rtr-lists-download.service: svc-lists-download
       traefik.http.services.svc-lists-download.loadbalancer.server.port: 8080
       traefik.job: list_download
-
     deploy:
       resources:
         limits:

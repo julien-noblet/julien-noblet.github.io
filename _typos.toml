@@ -1,0 +1,18 @@
+[files]
+extend-exclude = [
+  "themes/",
+  "public/",
+  "resources/",
+  "static/assets/",
+  "content/posts/old_posts/",
+  "content/posts/2025/",
+  "*.fr.md",
+  "hugo.yaml",
+  "devenv.lock",
+  ".devenv/",
+]
+
+[default.extend-words]
+Tutoriel = "Tutoriel"
+environnement = "environnement"
+sur = "sur"

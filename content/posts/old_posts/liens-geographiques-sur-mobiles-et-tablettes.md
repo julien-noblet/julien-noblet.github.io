@@ -12,7 +12,7 @@ description: >-
   encore mieux !
 
 cover:
-  image: /assets/images/CodeSWeb.jpg
+  image: /assets/images/CodeWeb.jpg
 published: "2015-02-21T00:00:00+02:00"
 NoLastmod: true
 tags:

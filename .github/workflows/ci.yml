@@ -1,18 +1,14 @@
 name: CI
-
 on:
   pull_request:
   push:
     branches: ["main"]
-
 permissions:
   contents: read
   id-token: write
-
 defaults:
   run:
     shell: bash
-
 jobs:
   hugo-build:
     runs-on: ubuntu-latest
@@ -25,24 +21,46 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Install Nix
-        uses: cachix/install-nix-action@v30
+        uses: cachix/install-nix-action@v31
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v16
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
+          name: devenv
+      - name: Install devenv
+        run: nix profile add nixpkgs#devenv
       - name: Build with Hugo
-        run: nix develop --command build-hugo
-
+        run: devenv --no-tui shell -- build-hugo
+      - name: Run Playwright e2e tests
+        run: devenv --no-tui shell -- test-e2e
+      - name: Check links with lychee
+        run: devenv --no-tui shell -- check-links
   markdown-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Install Nix
-        uses: cachix/install-nix-action@v30
+        uses: cachix/install-nix-action@v31
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v16
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
+          name: devenv
+      - name: Install devenv
+        run: nix profile add nixpkgs#devenv
       - name: Lint Markdown
-        run: nix develop --command markdownlint-cli2
+        run: devenv --no-tui shell -- markdownlint-cli2
+  lint-and-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v16
+        with:
+          name: devenv
+      - name: Install devenv
+        run: nix profile add nixpkgs#devenv
+      - name: Run treefmt and linters
+        run: devenv --no-tui shell -- lint-all
