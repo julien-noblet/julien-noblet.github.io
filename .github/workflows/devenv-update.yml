@@ -15,7 +15,7 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
       - name: Setup Cachix
-        uses: cachix/cachix-action@v16
+        uses: cachix/cachix-action@v17
         with:
           name: devenv
       - name: Install devenv
@@ -23,7 +23,7 @@ jobs:
       - name: Update devenv.lock
         run: devenv --no-tui update
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "chore(devenv): update devenv.lock"
           title: "chore(devenv): update devenv.lock"
