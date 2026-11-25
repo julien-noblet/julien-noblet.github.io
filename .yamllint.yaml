@@ -1,0 +1,14 @@
+extends: default
+ignore: |
+  themes/
+  public/
+  resources/
+  content/
+  .devenv/
+rules:
+  document-start: disable
+  line-length: disable
+  truthy:
+    allowed-values: ["true", "false", "on"]
+  comments:
+    min-spaces-from-content: 1

@@ -23,7 +23,6 @@ upstreams:
 # accepted: dual, v4, v6
 # default: dual
 connectIPVersion: dual
-
 caching:
   minTime: 1m
   maxTime: 0m
@@ -33,11 +32,10 @@ caching:
   prefetchThreshold: 5
   prefetchMaxItemsCount: 0
   cacheTimeNegative: 30s
-
 blocking:
   denylists:
     ads:
-      #- https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+    #- https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
     groupe_one:
       - http://traefik/lists-download/downloaded/group_one.txt
     hagezi:
@@ -66,7 +64,6 @@ blocking:
     strategy: failOnError
     # Forgive the errors in the aggregate lists. The aggregate one also contains all errors from all of lists.
     maxErrorsPerSource: -1
-
 customDNS:
   customTTL: 5m
   # optional: if true (default), return empty result for unmapped query types (for example TXT, MX or AAAA if only IPv4 address is defined).
@@ -84,7 +81,6 @@ customDNS:
     mafreebox     A     192.168.1.254
     grafana       CNAME	dns
     blocky        CNAME	dns
-
 clientLookup:
   # optional: this DNS resolver will be used to perform reverse DNS lookup (typically local router)
   upstream: 192.168.1.254
@@ -96,7 +92,6 @@ clientLookup:
   # optional: custom mapping of client name to IP addresses. Useful if reverse DNS does not work properly or just to have custom client names.
   clients:
     internal:
-
 ports:
   dns: 53
   http: 4000
@@ -104,13 +99,11 @@ ports:
   #tls: 853
   # optional: Port(s) and optional bind ip address(es) to serve HTTPS used for prometheus metrics, pprof, REST API, DoH... If you wish to specify a specific IP, you can do so such as 192.168.0.1:443. Example: 443, :443, 127.0.0.1:443,[::1]:443
   #https: 443
-
 prometheus:
   # enabled if true
   enable: true
   # url path, optional (default '/metrics')
   path: /metrics
-
 # optional: write query information (question, answer, client, duration etc.) to daily csv file
 queryLog:
   # optional one of: mysql, postgresql, timescale, csv, csv-client. If empty, log to console
@@ -130,7 +123,6 @@ queryLog:
   #   - duration
   # optional: Interval to write data in bulk to the external database, default: 30s
   flushInterval: 30s
-
 # optional: logging configuration
 log:
   # optional: Log level (one from trace, debug, info, warn, error). Default: info
@@ -141,7 +133,6 @@ log:
   timestamp: true
   # optional: obfuscate log output (replace all alphanumeric characters with *) for user sensitive data like request domains or responses to increase privacy. Default: false
   privacy: false
-
 # optional: add EDE error codes to dns response
 ede:
   # enabled if true, Default: false

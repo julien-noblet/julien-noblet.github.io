@@ -1,5 +1,4 @@
 name: traefik
-
 services:
   traefik:
     image: traefik:latest
@@ -9,13 +8,12 @@ services:
       # - ./traefik:/dynamic:ro # I don't need a dynamic file, use label!
     environment:
       TZ: Europe/Paris
-
     ports:
       # Port 80 is only used for redirecting to https; Some TLDs don't even support connecting to it (i.e. .dev).
       # Let's Encrypt will use a challenge on port 443 to verify the domain (TLS-ALPN-01);
       # See https://doc.traefik.io/traefik/https/acme/#tlschallenge for more information.
-      - 80:80     # web
-      - 443:443   # websecure
+      - 80:80 # web
+      - 443:443 # websecure
       - 8080:8080 # traefik internal
     networks:
       - blocky
@@ -39,12 +37,11 @@ services:
       - --accesslog.format=json
       - --providers.file.directory=/dynamic
       - --providers.file.watch=true
-
     restart: always
     healthcheck:
       # Run traefik healthcheck command
       # https://doc.traefik.io/traefik/operations/cli/#healthcheck
-      test: [ "CMD", "traefik", "healthcheck", "--ping" ]
+      test: ["CMD", "traefik", "healthcheck", "--ping"]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -52,7 +49,6 @@ services:
     dns: 1.1.1.1
     security_opt:
       - no-new-privileges:true
-
 networks:
   traefik:
     name: traefik

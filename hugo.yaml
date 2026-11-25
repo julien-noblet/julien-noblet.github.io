@@ -1,7 +1,7 @@
 baseURL: https://julien-noblet.github.io/
 disablePathToLower: true
 locale: fr_fr
-defaultContentLanguage : fr
+defaultContentLanguage: fr
 title: Mon blog
 description: Mon blog personnel, mes réflexions et mes projets
 theme: ["PaperMod"]
@@ -20,11 +20,14 @@ outputs:
     - JSON # necessary for search
 Params:
   author: Julien Noblet
+  env: production
+  images:
+    - /android-chrome-512x512.png
+  ShowFullTextinRSS: true
   ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
-
   socialIcons:
     - name: github
       title: View Source on Github
@@ -36,23 +39,22 @@ privacy:
   googleAnalytics:
     disable: false
     respectDoNotTrack: true
-    
 frontmatter:
   date:
-  - date
-  - publishDate
-  - lastmod
-  - :git
+    - date
+    - publishDate
+    - lastmod
+    - :git
   expiryDate:
-  - expiryDate
+    - expiryDate
   lastmod:
-  - :git
-  - lastmod
-  - :fileModTime
-  - :default
+    - :git
+    - lastmod
+    - :fileModTime
+    - :default
   publishDate:
-  - date
-  - publishDate
+    - date
+    - publishDate
 languages:
   fr:
     weight: 1
@@ -77,13 +79,12 @@ languages:
       homeInfoParams:
         Title: Bienvenue sur mon blog
         Content: >
-          ![Logo](/android-chrome-512x512.png)
-          Ici, vous trouverez mes réflexions et mes projets
+          ![Logo](/android-chrome-512x512.png) Ici, vous trouverez mes réflexions et mes projets
+
       editPost:
         URL: "https://github.com/julien-noblet/julien-noblet.github.io/tree/main/content"
         Text: "Suggérer une modification" # edit text
         appendFilePath: true
-    
   en:
     title: My blog
     description: My personal blog, my thoughts and my projects
@@ -109,8 +110,8 @@ languages:
       homeInfoParams:
         Title: Welcome to my blog
         Content: >
-          ![Logo](/android-chrome-512x512.png)
-          Here you will find my thoughts and my projects
+          ![Logo](/android-chrome-512x512.png) Here you will find my thoughts and my projects
+
       editPost:
         URL: "https://github.com/julien-noblet/julien-noblet.github.io/tree/main/content"
         Text: "Suggest Changes" # edit text

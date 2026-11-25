@@ -1,0 +1,18 @@
+<pre class="mermaid">
+  {{- .Inner | htmlEscape | safeHTML -}}
+</pre>
+{{- if not (.Page.Store.Get "hasMermaid") -}}
+  {{- .Page.Store.Set "hasMermaid" true -}}
+  <script defer src="/vendor/mermaid.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof mermaid === 'undefined') return;
+      const theme =
+        document.documentElement.dataset.theme === 'dark' ||
+        document.body.classList.contains('dark')
+          ? 'dark'
+          : 'default';
+      mermaid.initialize({ startOnLoad: true, theme });
+    });
+  </script>
+{{- end -}}

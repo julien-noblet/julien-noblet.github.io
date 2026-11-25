@@ -1,0 +1,32 @@
+name: Update devenv.lock
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v16
+        with:
+          name: devenv
+      - name: Install devenv
+        run: nix profile add nixpkgs#devenv
+      - name: Update devenv.lock
+        run: devenv --no-tui update
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore(devenv): update devenv.lock"
+          title: "chore(devenv): update devenv.lock"
+          body: "Automated weekly update of `devenv.lock`."
+          branch: chore/update-devenv-lock
+          delete-branch: true

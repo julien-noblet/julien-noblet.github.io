@@ -1,0 +1,17 @@
+max_retries = 2
+no_progress = true
+exclude_all_private = true
+
+exclude = [
+  'https://(www\.)?(linkedin|twitter|x)\.com/.*',
+  'https://github\.com/julien-noblet/julien-noblet\.github\.io/tree/main/content/.*',
+  'file://.*/public/cad-killer',
+  'file://.*/public/safari-pinned-tab\.svg',
+  'file://.*/asdf&#43;chezmoi.*',
+  'https://plessy\.me/.*',
+  'https://asdf-vm\.com/.*',
+]
+
+exclude_path = [
+  "public/posts/2025/Blocky-sur-la-Freebox/",
+]
